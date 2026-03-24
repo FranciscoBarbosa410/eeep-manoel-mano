@@ -4,8 +4,14 @@
         EEEP MM
     </a>
     <ul>
-        <li><a href="noticias.php">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
+        <li><a href="cursos.php">Cursos</a></li>
+        <li><a href="noticias.php">Notícias</a></li>
+        <li><a href="profissionais.php">Profissionais</a></li>
+        <li><a href="sobre.php">Sobre nós</a></li>
+        <li>
+            <a href="tela_login.php">
+                <i class="bx bx-user"></i>
+            </a>
+        </li>
     </ul>
 </nav>
