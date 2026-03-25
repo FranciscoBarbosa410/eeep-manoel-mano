@@ -9,7 +9,7 @@
     <title>Cadastro</title>
 </head>
 <body>
-    <h1>cadastro</h1>
+    <h1>Cadastro</h1>
     
     <form action="../app/cadastro.php" method="post">
         <label for="nome">Nome</label>
