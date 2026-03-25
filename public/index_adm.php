@@ -1,3 +1,5 @@
+<?php include('../app/verifica_login.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +14,7 @@
     ?>
 
     <a href="cad_noticias.php">Cadastrar noticia</a>
+    <a href="cad_classificados.php">Cadastrar classificado</a>
     <a href="../app/logout.php">Logout</a>
 </body>
 </html>
