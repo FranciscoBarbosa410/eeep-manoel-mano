@@ -1,35 +1,52 @@
-let slides = document.querySelectorAll(".slide");
+// ELEMENTOS
+const slidesContainer = document.querySelector('.slides');
+const slides = document.querySelectorAll('.slide');
+const btnNext = document.querySelector('.bnt-pass');
+const btnPrev = document.querySelector('.bnt-previos');
+const slider = document.querySelector('.slider');
+
 let index = 0;
+let interval;
 
-function mostrarSlide(i){
+// MOSTRAR SLIDE
+function mostrarSlide(i) {
 
-    slides.forEach(slide => {
-        slide.classList.remove("active");
-    });
+    if (i >= slides.length) index = 0;
+    else if (i < 0) index = slides.length - 1;
+    else index = i;
 
-    slides[i].classList.add("active");
+    slidesContainer.style.transform = `translateX(-${index * 100}%)`;
 }
 
-document.querySelector(".next").onclick = () => {
-
-    index++;
-
-    if(index >= slides.length){
-        index = 0;
-    }
-
-    mostrarSlide(index);
-
+// CONTROLES
+function nextSlide() {
+    mostrarSlide(index + 1);
 }
 
-document.querySelector(".prev").onclick = () => {
-
-    index--;
-
-    if(index < 0){
-        index = slides.length - 1;
-    }
-
-    mostrarSlide(index);
-
+function prevSlide() {
+    mostrarSlide(index - 1);
 }
+
+// AUTOPLAY
+function startAutoPlay() {
+    interval = setInterval(nextSlide, 6000);
+}
+
+function stopAutoPlay() {
+    clearInterval(interval);
+}
+
+// EVENTOS
+btnNext.addEventListener('click', nextSlide);
+btnPrev.addEventListener('click', prevSlide);
+
+slider.addEventListener('mouseenter', stopAutoPlay);
+slider.addEventListener('mouseleave', startAutoPlay);
+
+// INICIAR
+mostrarSlide(0);
+startAutoPlay();
+
+
+
+
