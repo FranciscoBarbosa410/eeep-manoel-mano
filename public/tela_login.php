@@ -4,16 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/login.css">
 </head>
 <body>
      <div class="master">
         <div class="esquerda-tela">
             <h1 class="titulo">Bem vindo a tela login!</h1>
+             <p>
+             ficamos felizes por ter você aqui. Se você tem acesso
+             preecha os campos para gerenciamento
+            </p>
         </div>
         <div class="direita-tela">
             <div class="card-login">
-                <h1 class="titulo">LOGIN</h1>
+            <h1 class="titulo">login</h1>
+            <p class="sub">de administrador</p>
             <form action="../app/login.php" method="post">    
                 <div class="text">
                          <label for="nome">Nome</label>

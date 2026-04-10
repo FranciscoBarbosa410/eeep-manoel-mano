@@ -1,3 +1,4 @@
+<?php include('navbar_adm.php'); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
