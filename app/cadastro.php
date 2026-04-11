@@ -19,7 +19,7 @@
 
     if(mysqli_query($conexao, $sqlInserir)) {
         $_SESSION['mensagem'] = "Cadastro realizado com sucesso! Faça login!";
-        header('Location: ../public/index.php');
+        header('Location: ../public/telacadastro.php');
         exit();
     } else {
         $_SESSION['mensagem'] = "Erro ao cadastrar" . mysqli_error($conexao);

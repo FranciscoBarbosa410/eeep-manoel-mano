@@ -23,11 +23,11 @@
 
     if(mysqli_query($conexao, $query)) {
         $_SESSION['mensagem'] = "Cadastro da notícia realizado com sucesso!";
-        header('Location: ../public/sucesso.php');
+        header('Location: ../public/cad_noticias.php');
         exit();
     } else {
         $_SESSION['mensagem'] = "Erro ao cadastrar" . mysqli_error($conexao);
-        header('Location: ../public/erro_cadastro.php');
+        header('Location: ../public/cad_noticias.php');
         exit();
     }
     

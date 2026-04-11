@@ -10,7 +10,6 @@
 <body>
     <?php 
         echo "Admin logado com sucesso!";
-        
     ?>
 
     <a href="cad_noticias.php">Cadastrar noticia</a>

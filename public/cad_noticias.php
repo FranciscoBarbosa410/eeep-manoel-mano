@@ -7,6 +7,13 @@
 </head>
 <body>
     <h1>Cadastrar Notícia</h1>
+    <?php 
+    session_start();
+    if(isset($_SESSION['mensagem'])) {
+        echo "<p>" . $_SESSION['mensagem'] . "</p>";
+        unset($_SESSION['mensagem']); 
+    }
+    ?>
     <form action="../app/cad_noticias.php" method="post" enctype="multipart/form-data">
         <label for="titulo">Título</label>
         <input type="text" name="titulo" id="titulo" maxlength="100" required>

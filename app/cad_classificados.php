@@ -1,11 +1,4 @@
 <?php 
-    /*
-    nome_classificado
-    curso_aprovado
-    instituicao_aprovada
-    foto_classificado
-    */
-
     session_start();
     include('banco.php');
 
@@ -30,11 +23,11 @@
 
     if(mysqli_query($conexao, $query)) {
         $_SESSION['mensagem'] = "Cadastro do realizado com sucesso!";
-        header('Location: ../public/index_adm.php');
+        header('Location: ../public/cad_classificados.php');
         exit();
     } else {
         $_SESSION['mensagem'] = "Erro ao cadastrar" . mysqli_error($conexao);
-        header('Location: ../public/index_adm.php');
+        header('Location: ../public/cad_classificados.php');
         exit();
     }
     

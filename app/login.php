@@ -3,7 +3,8 @@
     include('banco.php');
 
     if (empty($_POST['nome']) || empty($_POST['senha'])) {
-        header('Location: ../public/index.php');
+        $_SESSION['mensagem'] = "Preencha todos os campos!";
+        header('Location: ../public/tela_login.php');
         exit();
     }
 
@@ -25,7 +26,8 @@
         exit();
     } else {
         $_SESSION['nao_autenticado'] = true;
-        header('Location: ../public/index.php');
+        $_SESSION['mensagem'] = "Usuário não autenticado ou incorreto!";
+        header('Location: ../public/tela_login.php');
         exit();
     }
 ?>

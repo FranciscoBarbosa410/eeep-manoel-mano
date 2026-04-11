@@ -7,6 +7,13 @@
 </head>
 <body>
     <h1>Cadastrar Classificado</h1>
+    <?php 
+    session_start();
+    if(isset($_SESSION['mensagem'])) {
+        echo "<p>" . $_SESSION['mensagem'] . "</p>";
+        unset($_SESSION['mensagem']); 
+    }
+    ?>
     <form action="../app/cad_classificados.php" method="post" enctype="multipart/form-data">
         <label for="nome_classificado">Nome Completo</label>
         <input type="text" name="nome_classificado" id="nome_classificado" maxlength="255" required>

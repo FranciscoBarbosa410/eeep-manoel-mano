@@ -10,7 +10,13 @@
 </head>
 <body>
     <h1>Cadastro</h1>
-    
+    <?php 
+    session_start();
+    if(isset($_SESSION['mensagem'])) {
+        echo "<p>" . $_SESSION['mensagem'] . "</p>";
+        unset($_SESSION['mensagem']); 
+    }
+    ?>
     <form action="../app/cadastro.php" method="post">
         <label for="nome">Nome</label>
         <input id="nome" type="text" name="nome">
