@@ -38,7 +38,8 @@ body {
     transition: 0.3s;
 }
 
-/* Link dentro do card */
+/* texto card */
+/*obs:temporario*/
 .card-cursos a {
     text-decoration: none;
     color: black;
