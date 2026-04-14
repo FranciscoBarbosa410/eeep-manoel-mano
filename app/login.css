@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 100vh;
+}
+
+/* CONTAINER PRINCIPAL */
+.master {
+    display: flex;
+    height: 100vh;
+}
+
+/* LADO ESQUERDO */
+.esquerda-tela {
+    width: 50%;
+    background: #49b04a;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px;
+}
+
+.esquerda-tela .titulo {
+    font-size: 48px;
+    margin-bottom: 30px;
+}
+
+.esquerda-tela p {
+    font-size: 22px;
+    line-height: 1.5;
+    max-width: 500px;
+}
+
+/* LADO DIREITO */
+.direita-tela {
+    width: 50%;
+    background: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CARD LOGIN */
+.card-login {
+    width: 350px;
+    text-align: center; /* 🔥 CENTRALIZA TUDO */
+}
+
+.card-login .titulo {
+    font-size: 48px;
+    text-transform: lowercase;
+    margin-bottom: 5px;
+}
+
+.card-login .sub {
+    margin-bottom: 30px;
+    color: #555;
+}
+
+/* INPUTS */
+.text {
+    margin-bottom: 20px;
+    text-align: left; /* mantém label alinhado à esquerda */
+}
+
+.text label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.text input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #d9d9d9;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    outline: none;
+}
+
+/* BOTÃO */
+.btn-login {
+    width: 100%;
+    padding: 15px;
+    background: #49b04a;
+    color: white;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.btn-login:hover {
+    background: #3c943d;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+    .master {
+        flex-direction: column;
+    }
+
+    .esquerda-tela,
+    .direita-tela {
+        width: 100%;
+        height: 50%;
+    }
+
+    .esquerda-tela {
+        align-items: center;
+        text-align: center;
+    }
+}

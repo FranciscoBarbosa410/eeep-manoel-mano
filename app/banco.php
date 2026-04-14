@@ -7,10 +7,10 @@
 
     $conexao = mysqli_connect(HOST, USUARIO, SENHA, DB) or die('Não foi possível conectar');
 
-    
+    //Notícias
     function buscar_noticias($conexao) {
-        $sqlBusca = 'SELECT * FROM noticias';
-        $resultado = mysqli_query($conexao, $sqlBusca);
+        $sqlBuscar = "SELECT * FROM noticias";
+        $resultado = mysqli_query($conexao, $sqlBuscar);
 
         $noticias = [];
 
@@ -20,5 +20,7 @@
 
         return $noticias;
     }
+
+
 
 ?>
