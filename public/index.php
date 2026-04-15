@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="tela_cadastro.php">CadastroADM</a>
-    <a href="tela_login.php">LoginADM</a>
+    <a href="noticias.php">Noticias</a>
+    <a href="tela_login.php">Login</a>
 </body>
 </html>

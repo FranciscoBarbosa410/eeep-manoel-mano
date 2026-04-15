@@ -14,6 +14,7 @@
 
     <a href="cad_noticias.php">Cadastrar noticia</a>
     <a href="cad_classificados.php">Cadastrar classificado</a>
+    <a href="noticias_adm.php">Noticias</a>
     <a href="../app/logout.php">Logout</a>
 </body>
 </html>

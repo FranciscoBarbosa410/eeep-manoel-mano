@@ -9,7 +9,7 @@
 
     //Notícias
     function buscar_noticias($conexao) {
-        $sqlBuscar = "SELECT * FROM noticias";
+        $sqlBuscar = "SELECT * FROM noticias ORDER BY data_noticia DESC";
         $resultado = mysqli_query($conexao, $sqlBuscar);
 
         $noticias = [];
