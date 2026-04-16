@@ -41,7 +41,9 @@ body {
     border-radius: 10px;
     overflow: hidden; /* IMPORTANTE */
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    margin-bottom: 30px;
+   
+    max-width: 800px;
+    margin: 30px auto;
 }
 
 /* ÁREA DOS SLIDES */
