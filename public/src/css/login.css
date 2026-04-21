@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+}
+
+/* CONTAINER PRINCIPAL */
+.master {
+    display: flex;
+    height: 100vh;
+}
+
+/* LADO ESQUERDO (VERDE) */
+.esquerda-tela {
+    width: 50%;
+    background: #49b04a;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px;
+}
+
+.esquerda-tela .titulo {
+    font-size: 48px;
+    margin-bottom: 30px;
+}
+
+.esquerda-tela p {
+    font-size: 22px;
+    line-height: 1.5;
+    max-width: 500px;
+}
+
+/* LADO DIREITO */
+.direita-tela {
+    width: 50%;
+    background: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-login {
+    width: 380px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* TÍTULO */
+.card-login .titulo {
+    font-size: 48px;
+    font-weight: bold;
+    text-transform: lowercase;
+    margin-bottom: 0;
+}
+
+/* SUBTÍTULO */
+.card-login .sub {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* CAMPOS */
+.text {
+    margin-bottom: 20px;
+}
+
+.text label {
+    font-size: 13px;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.text input {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    background: #e5e5e5;
+    border-radius: 6px;
+    outline: none;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+/* EFEITO AO CLICAR */
+.text input:focus {
+    background: #dcdcdc;
+}
+
+/* BOTÃO */
+.btn-login {
+    width: 100%;
+    padding: 15px;
+    background: #49b04a;
+    color: white;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.btn-login:hover {
+    background: #3d943e;
+    transform: scale(1.03);
+}
+
+/* INPUTS */
+.text {
+    margin-bottom: 20px;
+}
+
+.text label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.text input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #d9d9d9;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    outline: none;
+}
+
+/* BOTÃO */
+.btn-login {
+    width: 100%;
+    padding: 15px;
+    background: #49b04a;
+    color: white;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.btn-login:hover {
+    background: #3c943d;
+}
+
+
+
+    .esquerda-tela {
+        align-items: center;
+        text-align: center;
+    }

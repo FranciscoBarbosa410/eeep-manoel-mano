@@ -17,7 +17,7 @@ $noticias = buscar_noticias($conexao);
     <a href="index.php">Voltar</a>
 
     <?php foreach($noticias as $noticia) { ?>
-        <div>
+        <div class="master-back">
             <h2><?php echo htmlspecialchars($noticia['titulo']); ?></h2>
             <p><strong>Data:</strong> 
                 <?php 

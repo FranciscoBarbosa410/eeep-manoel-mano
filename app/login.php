@@ -22,7 +22,7 @@
 
     if ($row > 0) {
         $_SESSION['nome'] = $nome;
-        header('Location: ../public/index_adm.php');
+        header('Location: ../public/adm/index_adm.php');
         exit();
     } else {
         $_SESSION['nao_autenticado'] = true;
