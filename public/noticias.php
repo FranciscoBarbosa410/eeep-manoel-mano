@@ -9,11 +9,9 @@
      <link rel="stylesheet" href="src/css/noticias.css">
 </head>
 <body>
- <div class="master-back">
+<div class="master-back">
     <div class="noticias1">
         <h1 class="text">Ultimas noticias</h1>
-
-    
 
         <!-- noticias abaixo -->
         <div class="noticias2">
@@ -43,7 +41,5 @@
             </div>
         </div>
     </div>
-</div>
-  
-    
+</div> 
 </body>

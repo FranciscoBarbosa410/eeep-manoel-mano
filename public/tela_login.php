@@ -7,9 +7,7 @@
     <link rel="stylesheet" href="./src/css/login.css">
 </head>
 <body>
-
     <main class="master">
-
         <!-- LADO ESQUERDO -->
         <section class="esquerda-tela">
             <h1 class="titulo">Bem vindo a tela login!</h1>
@@ -18,7 +16,6 @@
                 preencha os campos para gerenciamento.
             </p>
         </section>
-
         <!-- LADO DIREITO -->
         <section class="direita-tela">
             <section class="card-login">
@@ -41,8 +38,6 @@
                 </form> 
             </section>
         </section>
-
     </main>
-
 </body>
 </html>

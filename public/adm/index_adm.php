@@ -8,14 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
     <link rel="stylesheet" href="../src/css/navbar_adm.css">
+    <link rel="stylesheet" href="../src/css/noticias.css">
    
 </head>
 <body>
     <?php 
-        echo "Admin logado com sucesso!";
-        
+        include('../slide_noticias.php');
     ?>
 
-    
+    <script src="../src/js/script.js"></script>
 </body>
 </html>
