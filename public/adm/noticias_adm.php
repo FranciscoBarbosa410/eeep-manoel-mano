@@ -9,6 +9,7 @@ $noticias = buscar_noticias($conexao);
 <head>
     <meta charset="UTF-8">
     <title>Lista de Notícias</title>
+    <link rel="stylesheet" href="../src/css/style.css">
 </head>
 <body>
     <h1>Notícias</h1>

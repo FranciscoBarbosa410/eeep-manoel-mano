@@ -1,0 +1,10 @@
+footer {
+    background-color: var(--color-primary-1);
+    color: var(--color-neutral-1);
+    text-align: center;
+    height: 30px;
+
+    p {
+        font-size: 1rem;
+    }
+}

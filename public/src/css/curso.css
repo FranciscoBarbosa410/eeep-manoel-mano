@@ -1,8 +1,0 @@
-@import url('navbar.css');
-@import url('login.css');
-@import url('card_cursos.css');
-
-.card_cursos.css {
-    display: flex;
-    justify-content: center;
-}

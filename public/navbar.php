@@ -5,7 +5,7 @@
             EEEP Manoel Mano
         </a>
         <ul>
-            <li><a href="cursos.php">Cursos</a></li>
+            <li><a href="#">Cursos</a></li>
             <li><a href="noticias.php">Notícias</a></li>
             <!-- <li><a href="profissionais.php">Profissionais</a></li> -->
             <!-- <li><a href="sobre.php">Sobre nós</a></li> -->

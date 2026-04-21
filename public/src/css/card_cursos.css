@@ -1,58 +1,45 @@
-@import url('variables.css');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: #f2f2f2;
-    font-family: 'Poppins', sans-serif;
-}
-
 .curso {
     width: 100%;
     display: flex;
     justify-content: center;
-}
-
-/* CONTAINER */
-.card-cursos {
-    width: 100%;
-    padding: 40px ;
     
-    ul {
-        list-style: none;
-        display: flex;
-        justify-content: center; 
-        gap: 40px;
-        flex-wrap: wrap;
+    .card-cursos {
+        width: 100%;
+        padding: 40px ;
         
-        li {
-            width: 200px;
-            height: 80px;
-            background-color: var(--color-neutral-4);
-            box-shadow: 0 -5px 5px var(--color-neutral-5);
+        ul {
+            list-style: none;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 6px;
-            transition: 0.3s ease;
+            justify-content: center; 
+            gap: 40px;
+            flex-wrap: wrap;
             
-            a {
-                text-decoration: none;
-                color: var(--color-neutral-5);
-                font-size: 24px;
-                font-weight: bold;
-            }
-            
-            &:hover {
-                background-color: var(--color-primary-2);
-                color: var(--color-neutral-2);
-                box-shadow: 0 5px 5px var(--color-primary-1);
-                transform: scale(1.05);
+            li {
+                width: 200px;
+                height: 80px;
+                background-color: var(--color-neutral-4);
+                box-shadow: 0 -5px 5px var(--color-neutral-5);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 6px;
+                transition: 0.3s ease;
+                
+                a {
+                    text-decoration: none;
+                    color: var(--color-neutral-5);
+                    font-size: 24px;
+                    font-weight: bold;
+                }
+                
+                &:hover {
+                    background-color: var(--color-primary-2);
+                    color: var(--color-neutral-2);
+                    box-shadow: 0 5px 5px var(--color-primary-1);
+                    transform: scale(1.05);
+                }
             }
         }
     }
 }
+
