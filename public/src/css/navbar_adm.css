@@ -3,13 +3,13 @@
 * {
     font-family: 'Poppins', sans-serif;
 }
-/* remove espaçamento padrão da página */
+
 body {
     margin: 0;
     padding: 0;
 }
 
-/* navbar */
+
 nav {
     background-color: #21850a;
     width: 100%;

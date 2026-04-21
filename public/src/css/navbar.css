@@ -1,7 +1,5 @@
-@import url(variables.css);
-* {
-    font-family: 'Poppins', sans-serif;
-}
+@import url('variables.css');
+
 body {
     margin: 0;
     padding: 0;
@@ -13,14 +11,15 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     padding: 0;       
     margin: 0;        
     border: none;
     
-    a {
-        color: white;
+    .home-link {
+        color: var(--color-neutral-1);
         text-decoration: none;
+        font-weight: bold;
+        font-size: 1.3rem;
         padding: 10px;
     }
     
@@ -29,20 +28,24 @@ nav {
         height: auto;
         vertical-align: middle;
     }
+    
+    ul {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+        
+        li {
+            margin-left: 15px;
+
+            a {
+                color: var(--color-neutral-1);
+                text-decoration: none;
+                font-size: 1.2rem;
+                padding: 10px;
+            }
+        }
+    }
+    
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    margin-left: 15px;
-}
-
-nav .bx.bxuser {
-    font-size: 52px;
-    color: white;
-}

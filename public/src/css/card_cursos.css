@@ -1,3 +1,4 @@
+@import url('variables.css');
 
 * {
     margin: 0;
@@ -5,57 +6,53 @@
     box-sizing: border-box;
 }
 
-/* FUNDO */
 body {
     background-color: #f2f2f2;
     font-family: 'Poppins', sans-serif;
 }
 
-/* SECTION CENTRALIZADA */
 .curso {
     width: 100%;
     display: flex;
-    justify-content: center; /* centraliza tudo */
+    justify-content: center;
 }
 
 /* CONTAINER */
 .card-cursos {
     width: 100%;
-    max-width: 1000px; /* limita largura */
-    padding: 40px 0;
-}
-
-/* LISTA (CARDS) */
-.card-cursos ul {
-    list-style: none;
-    display: flex;
-    justify-content: center; /* centraliza os cards */
-    gap: 40px;
-    flex-wrap: wrap; /* quebra linha no celular */
-}
-
-/* CARD */
-.card-cursos li {
-    width: 200px;
-    height: 80px;
-    background-color: #d9d9d9;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 6px;
-    transition: 0.3s;
-}
-
-/* LINK */
-.card-cursos a {
-    text-decoration: none;
-    color: black;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-/* HOVER */
-.card-cursos li:hover {
-    background-color: #c4c4c4;
-    transform: scale(1.05);
+    padding: 40px ;
+    
+    ul {
+        list-style: none;
+        display: flex;
+        justify-content: center; 
+        gap: 40px;
+        flex-wrap: wrap;
+        
+        li {
+            width: 200px;
+            height: 80px;
+            background-color: var(--color-neutral-4);
+            box-shadow: 0 -5px 5px var(--color-neutral-5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            transition: 0.3s ease;
+            
+            a {
+                text-decoration: none;
+                color: var(--color-neutral-5);
+                font-size: 24px;
+                font-weight: bold;
+            }
+            
+            &:hover {
+                background-color: var(--color-primary-2);
+                color: var(--color-neutral-2);
+                box-shadow: 0 5px 5px var(--color-primary-1);
+                transform: scale(1.05);
+            }
+        }
+    }
 }
