@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../app/banco.php');
+include('../../app/banco.php');
 
 $noticias = buscar_noticias($conexao);
 ?>
@@ -11,7 +11,7 @@ $noticias = buscar_noticias($conexao);
     <title>Lista de Notícias</title>
 </head>
 <body>
-    
+    <button>ola</button>
     <h1>Notícias</h1>
 
     <a href="index_adm.php">Voltar</a>

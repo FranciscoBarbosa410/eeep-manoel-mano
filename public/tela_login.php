@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="./src/css/login.css">
+    <link rel="stylesheet" href="src/css/style.css">
 </head>
 <body>
-    <main class="master">
+    <main class="container">
         <!-- LADO ESQUERDO -->
-        <section class="esquerda-tela">
+        <section class="tela-esquerda">
             <h1 class="titulo">Bem vindo a tela login!</h1>
             <p>
                 Ficamos felizes por ter você aqui. Se você tem acesso,
@@ -17,10 +17,11 @@
             </p>
         </section>
         <!-- LADO DIREITO -->
-        <section class="direita-tela">
-            <section class="card-login">
+        <section class="tela-direita">
+            <a href="index.php" class="btn-back">Voltar</a>
+            <div class="card-login">
                 <h1 class="titulo">Login</h1>
-                <p class="sub">de administrador</p>
+                <p class="sub">De administrador</p>
                 <?php 
                     session_start();
                     if(isset($_SESSION['mensagem'])) {
@@ -30,19 +31,17 @@
                 ?>
                 <form action="../app/login.php" method="post">    
                     
-                    <section class="text">
+                    <div class="text">
                         <label for="nome">Nome</label>
                         <input id="nome" type="text" name="nome" required>
-                    </section>
-
-                    <section class="text">
+                    
                         <label for="senha">Senha</label>
                         <input id="senha" type="password" name="senha" required>
-                    </section>
+                    </div>
 
-                    <button type="submit" class="btn-login">Login</button>
+                    <button class="btn-login" type="submit">Login</button>
                 </form> 
-            </section>
+            </div>
         </section>
     </main>
 </body>

@@ -46,7 +46,3 @@ slider.addEventListener('mouseleave', startAutoPlay);
 // INICIAR
 mostrarSlide(0);
 startAutoPlay();
-
-
-
-

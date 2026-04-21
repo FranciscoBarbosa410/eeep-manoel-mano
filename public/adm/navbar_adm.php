@@ -5,7 +5,7 @@
     </a>
     <ul>
         <li><a href="../cursos.php">Cursos</a></li>
-        <li><a href="cad_noticias.php">Notícias</a></li>
+        <li><a href="noticias_adm.php">Notícias</a></li>
         <li><a href="../profissionais.php">Profissionais</a></li>
         <li><a href="../sobre.php">Sobre nós</a></li>
         <li><a href="../../app/logout.php">Logout</a></li>
