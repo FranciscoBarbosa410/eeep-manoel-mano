@@ -58,7 +58,6 @@ body {
             }
         }
 
-
         .card-login {
             width: 380px;
             background: var(--color-neutral-1);
@@ -74,7 +73,7 @@ body {
             
             .sub {
                 font-size: 14px;
-                color: #666;
+                color: #555;
                 margin-bottom: 30px;
             }
 
@@ -92,14 +91,14 @@ body {
                     width: 100%;
                     padding: 14px;
                     border: none;
-                    background: var(--color-neutral-2);
+                    background: var(--color-neutral-3);
                     border-radius: 6px;
                     outline: none;
                     font-size: 14px;
                     transition: 0.2s;
                     
                     &:focus {
-                        background: var(--color-neutral-3);
+                        background: var(--color-neutral-4);
                     }
                 }
             

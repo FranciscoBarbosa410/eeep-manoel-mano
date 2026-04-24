@@ -1,3 +1,45 @@
+.noticias {
+    display: grid;
+}
+
+.card-noticia {
+    background: var(--color-neutral-1);
+    border-radius: 10px;
+    overflow: hidden;
+    padding-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+    
+    &:hover {
+        transform: translateY(-5px);
+    }
+    
+    img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        background: #ccc;
+    }
+    
+    p {
+        font-size: 0.9rem;
+        padding: 0 10px;
+    }
+}
+
+.btn {
+    top: 20px;      
+    left: 20px;
+    color: var(--color-primary-1);
+    text-decoration: none;
+    transition: 0.3s;
+            
+    &:hover {
+        color: var(--color-primary-2);
+        transform: scale(1.05);
+    }
+}
+
 .slider {
     position: relative;
     background: var(--color-neutral-1);
@@ -7,53 +49,49 @@
    
     max-width: 800px;
     margin: 30px auto;
-}
-
-.slides {
-    display: flex;
-    width: 100%;
-    transition: transform 0.5s ease-in-out;
     
-    .slide {
-        min-width: 100%;
-        background: var(--color-neutral-1);
-        border-radius: 8px;
-        overflow: hidden;
-        transition: transform 0.3s;
-    
+    .slides {
+        display: flex;
+        width: 100%;
+        transition: transform 0.5s ease-in-out;
         
-        &:hover {
-            transform: scale(1.02);
-        }
+        .slide {
+            min-width: 100%;
+            background: var(--color-neutral-1);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
         
-        img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            background: var(--color-neutral-4);
-            display: block;
+            
+            &:hover {
+                transform: scale(1.02);
+            }
+            
+            img {
+                width: 100%;
+                height: 300px;
+                object-fit: cover;
+                background: var(--color-neutral-4);
+                display: block;
+            }
+
+            .text-slide {
+                padding: 15px;
+                
+                h2 {
+                    font-size: 1.4rem;
+                    margin-bottom: 8px;
+                    color: var(--color-primary-2);
+                }
+            
+                p {
+                    font-size: 1rem;
+                }
+            }
         }
     }
 }
 
-/* IMAGENS */
-
-.text-slide {
-    padding: 15px;
-    
-    h2 {
-        font-size: 1.4rem;
-        margin-bottom: 8px;
-        color: var(--color-primary-2);
-    }
-
-    p {
-        font-size: 1rem;
-    }
-}
-
-
-/* BOTÕES do slide*/
 .bnt-pass, .bnt-previos {
     position: absolute;
     top: 50%;
@@ -79,27 +117,3 @@
     background: var(--color-secondary);
 }
 
-.card-noticia {
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    padding-bottom: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
-    transition: transform 0.3s;
-    
-    &:hover {
-        transform: translateY(-5px);
-    }
-    
-    img {
-        width: 100%;
-        height: 150px;
-        object-fit: cover;
-        background: #ccc;
-    }
-}
-
-.card-noticia p {
-    font-size: 0.9rem;
-    padding: 0 10px;
-}

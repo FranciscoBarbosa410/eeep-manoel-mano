@@ -2,7 +2,7 @@
 <?php include('navbar_adm.php'); ?>
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,6 +17,7 @@
             </h1>
 
             <p class="home-description">
+                Página do Administrador <br>
                 Chegue como <span>você</span> é. Saia quem <span>você</span> quer ser!
                 Confira o que temos a oferecer:
             </p>
