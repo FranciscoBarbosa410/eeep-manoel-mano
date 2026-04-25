@@ -35,6 +35,6 @@
         <input type="submit" value="Cadastrar Notícia">
     </form>
 
-    <a href="noticias_adm.php">Voltar</a>
+    <a href="noticias_adm.php" class="btn">Voltar</a>
 </body>
 </html>

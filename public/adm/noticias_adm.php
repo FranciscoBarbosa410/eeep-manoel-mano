@@ -41,11 +41,11 @@ $noticias = buscar_noticias($conexao);
         
                     <p><?php echo nl2br(htmlspecialchars($noticia['conteudo'])); ?></p>
         
-                    <button>
+                    <button class="btn-primary">
                         <a href="#">Editar</a>
                     </button>
         
-                    <button>
+                    <button class="btn-primary">
                         <a href="#">Remover</a>
                     </button>
                 </div>
