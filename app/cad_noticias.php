@@ -8,7 +8,7 @@
         exit();
     }
 
-    $titulo  = $_POST['titulo'];
+    $titulo = $_POST['titulo'];
     $data_noticia = $_POST['data_noticia'];
     $conteudo = $_POST['conteudo'];
     $foto_noticia = addslashes(file_get_contents($_FILES['foto_noticia']['tmp_name']));
@@ -23,11 +23,11 @@
 
     if(mysqli_query($conexao, $query)) {
         $_SESSION['mensagem'] = "Cadastro da notícia realizado com sucesso!";
-        header('Location: ../public/cad_noticias.php');
+        header('Location: ../public/adm/cad_noticias.php');
         exit();
     } else {
         $_SESSION['mensagem'] = "Erro ao cadastrar" . mysqli_error($conexao);
-        header('Location: ../public/cad_noticias.php');
+        header('Location: ../public/adm/cad_noticias.php');
         exit();
     }
     
