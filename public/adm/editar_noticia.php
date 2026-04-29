@@ -1,5 +1,4 @@
 <?php 
-session_start();
 include('../../app/banco.php');
 include('../../app/verifica_login.php');
 include('navbar_adm.php');
@@ -65,43 +64,46 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="../src/css/style.css">
 </head>
 <body>
-    <div class="card">
-        <div class="card-cad">
-            <h1 class="titulo">Editar</h1>
-            <p class="sub">Notícia</p>
-            <?php 
-                session_start();
-                if(isset($_SESSION['mensagem'])) {
-                    echo "<p>" . $_SESSION['mensagem'] . "</p>";
-                    unset($_SESSION['mensagem']); 
-                }
-            ?>
+    <main id="container">
 
-            <form method="POST" enctype="multipart/form-data">
-                <div class="text">
-                    <label for="titulo">Título</label>
-                    <input type="text" name="titulo" id="titulo" maxlength="100" value="<?php echo $noticia['titulo']; ?>" required>
+        <div class="card">
+            <div class="card-cad">
+                <h1 class="titulo">Editar</h1>
+                <p class="sub">Notícia</p>
+                <?php 
+                    session_start();
+                    if(isset($_SESSION['mensagem'])) {
+                        echo "<p>" . $_SESSION['mensagem'] . "</p>";
+                        unset($_SESSION['mensagem']); 
+                    }
+                ?>
     
-                    <label for="data_noticia">Data da notícia:</label>
-                    <input type="date" name="data_noticia" id="data_noticia" value="<?php echo $noticia['data_noticia']; ?>" required>
-                    
-                    <label for="conteudo">Conteúdo:</label><br>
-                    <textarea name="conteudo" id="conteudo" rows="6" cols="50"required><?php echo nl2br(htmlspecialchars($noticia['conteudo'])); ?></textarea>
+                <form method="POST" enctype="multipart/form-data">
+                    <div class="text">
+                        <label for="titulo">Título</label>
+                        <input type="text" name="titulo" id="titulo" maxlength="100" value="<?php echo $noticia['titulo']; ?>" required>
+        
+                        <label for="data_noticia">Data da notícia:</label>
+                        <input type="date" name="data_noticia" id="data_noticia" value="<?php echo $noticia['data_noticia']; ?>" required>
+                        
+                        <label for="conteudo">Conteúdo:</label><br>
+                        <textarea name="conteudo" id="conteudo" rows="6" cols="50"required><?php echo nl2br(htmlspecialchars($noticia['conteudo'])); ?></textarea>
+        
+                        <label for="foto_noticia">Nova foto da notícia (opcional):</label><br>
+                        <input type="file" name="foto_noticia" id="foto_noticia" accept="image/*"><br><br>
+        
+                        <?php if (!empty($noticia['foto_noticia'])): ?>
+                            <p>Foto atual:</p>
+                            <img src="data:image/jpeg;base64,<?php echo base64_encode($noticia['foto_noticia']); ?>" 
+                                alt="Foto da notícia" width="200">
+                        <?php endif; ?>
+                    </div>
     
-                    <label for="foto_noticia">Nova foto da notícia (opcional):</label><br>
-                    <input type="file" name="foto_noticia" id="foto_noticia" accept="image/*"><br><br>
-    
-                    <?php if (!empty($noticia['foto_noticia'])): ?>
-                        <p>Foto atual:</p>
-                        <img src="data:image/jpeg;base64,<?php echo base64_encode($noticia['foto_noticia']); ?>" 
-                            alt="Foto da notícia" width="200">
-                    <?php endif; ?>
-                </div>
-
-                <button class="btn-primary" type="submit">Salvar Alterações</button>
-            </form>
-            <a href="noticias_adm.php" class="btn-cad">Cancelar</a>
+                    <button class="btn-primary" type="submit">Salvar Alterações</button>
+                </form>
+                <a href="noticias_adm.php" class="btn-cad">Cancelar</a>
+            </div>
         </div>
-    </div>
+    </main>
 </body>
 </html>
