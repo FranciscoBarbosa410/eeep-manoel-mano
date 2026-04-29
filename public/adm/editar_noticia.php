@@ -67,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <main id="container">
 
         <div class="card">
-            <div class="card-cad">
+            <div class="card-edit">
                 <h1 class="titulo">Editar</h1>
                 <p class="sub">Notícia</p>
                 <?php 

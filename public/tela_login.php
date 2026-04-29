@@ -32,7 +32,7 @@
                 <form action="../app/login.php" method="post">    
                     
                     <div class="text">
-                        <label for="nome">Nome</label>
+                        <label for="nome">Email</label>
                         <input id="nome" type="text" name="nome" required>
                     
                         <label for="senha">Senha</label>
