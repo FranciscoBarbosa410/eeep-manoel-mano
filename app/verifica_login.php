@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['nome']) || empty($_SESSION['nome'])) {
+if (!isset($_SESSION['email'])) {
     header('Location: ../public/tela_login/.php');
     exit();
 }

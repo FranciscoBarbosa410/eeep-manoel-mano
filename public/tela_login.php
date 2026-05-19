@@ -33,7 +33,7 @@
                     
                     <div class="text">
                         <label for="nome">Email</label>
-                        <input id="nome" type="text" name="nome" required>
+                        <input id="nome" type="text" name="email" required>
                     
                         <label for="senha">Senha</label>
                         <input id="senha" type="password" name="senha" required>
