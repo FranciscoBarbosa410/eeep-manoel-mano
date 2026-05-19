@@ -2,7 +2,7 @@
     session_start();
     include('banco.php');
 
-    if(empty($_POST['titulo']) || empty($_POST['data_noticia']) || empty($_POST['conteudo']) || empty($_FILES['foto_noticia']['tmp_name'])) {
+    if(empty($_POST['titulo']) || empty($_POST['data_noticia']) || empty($_POST['descricao_noticia']) || empty($_FILES['foto_noticia']['tmp_name'])) {
         $_SESSION['mensagem'] = "Preencha todos os campos!";
         header('Location: ../public/cad_noticias.php');
         exit();
@@ -10,14 +10,14 @@
 
     $titulo = $_POST['titulo'];
     $data_noticia = $_POST['data_noticia'];
-    $conteudo = $_POST['conteudo'];
+    $descricao_noticia = $_POST['descricao_noticia'];
     $foto_noticia = addslashes(file_get_contents($_FILES['foto_noticia']['tmp_name']));
 
-    $query = "INSERT INTO noticias (titulo, data_noticia, conteudo, foto_noticia)
+    $query = "INSERT INTO noticias (titulo, data_noticia, descricao_noticia, foto_noticia)
         VALUES  (
         '$titulo',
         '$data_noticia',
-        '$conteudo',
+        '$descricao_noticia',
         '$foto_noticia'
         )";
 

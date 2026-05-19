@@ -38,7 +38,7 @@ $noticias = buscar_noticias($conexao);
                         <?php } ?>
             
             
-                        <p><?php echo nl2br(htmlspecialchars($noticia['conteudo'])); ?></p>
+                        <p><?php echo nl2br(htmlspecialchars($noticia['descricao_noticia'])); ?></p>
                     </div>
                 <?php } ?>
             </div>

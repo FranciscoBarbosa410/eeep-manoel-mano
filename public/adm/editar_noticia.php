@@ -25,21 +25,21 @@ $noticia = mysqli_fetch_assoc($resultado);
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $titulo = $_POST['titulo'];
     $data_noticia = $_POST['data_noticia'];
-    $conteudo = $_POST['conteudo'];
+    $descricao_noticia = $_POST['descricao_noticia'];
 
     if (!empty($_FILES['foto_noticia']['tmp_name'])) {
         $foto_noticia = addslashes(file_get_contents($_FILES['foto_noticia']['tmp_name']));
         $sql_update = "UPDATE noticias SET 
             titulo='$titulo',
             data_noticia='$data_noticia',
-            conteudo='$conteudo',
+            descricao_noticia='$descricao_noticia',
             foto_noticia='$foto_noticia'
             WHERE id_noticia=$id";
     } else {
         $sql_update = "UPDATE noticias SET 
             titulo='$titulo',
             data_noticia='$data_noticia',
-            conteudo='$conteudo'
+            descricao_noticia='$descricao_noticia'
             WHERE id_noticia=$id";
     }
 
@@ -86,8 +86,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <label for="data_noticia">Data da notícia:</label>
                         <input type="date" name="data_noticia" id="data_noticia" value="<?php echo $noticia['data_noticia']; ?>" required>
                         
-                        <label for="conteudo">Conteúdo:</label><br>
-                        <textarea name="conteudo" id="conteudo" rows="6" cols="50"required><?php echo nl2br(htmlspecialchars($noticia['conteudo'])); ?></textarea>
+                        <label for="conteudo">Descrição:</label><br>
+                        <textarea name="descricao_noticia" id="conteudo" rows="6" cols="50"required><?php echo nl2br(htmlspecialchars($noticia['descricao_noticia'])); ?></textarea>
         
                         <label for="foto_noticia">Nova foto da notícia (opcional):</label><br>
                         <input type="file" name="foto_noticia" id="foto_noticia" accept="image/*"><br><br>

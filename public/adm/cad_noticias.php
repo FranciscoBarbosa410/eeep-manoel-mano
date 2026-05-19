@@ -30,8 +30,8 @@
                     <label for="data_noticia">Data da notícia:</label>
                     <input type="date" name="data_noticia" id="data_noticia" required>
                     
-                    <label for="conteudo">Conteúdo:</label><br>
-                    <textarea name="conteudo" id="conteudo" rows="6" cols="50" required></textarea>
+                    <label for="descricao_noticia">Descrição:</label><br>
+                    <textarea name="descricao_noticia" id="conteudo" rows="6" cols="50" required></textarea>
     
                     <label for="foto_noticia">Foto da notícia(Somente .jpeg):</label><br>
                     <input type="file" name="foto_noticia" id="foto_noticia" accept="image/*"><br><br>

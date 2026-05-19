@@ -46,7 +46,7 @@ $noticias = buscar_noticias($conexao);
                         <p><em>Sem foto</em></p>
                     <?php } ?>
         
-                    <p><?php echo nl2br(htmlspecialchars($noticia['conteudo'])); ?></p>
+                    <p><?php echo nl2br(htmlspecialchars($noticia['descricao_noticia'])); ?></p>
         
                     <button class="btn-primary">
                         <a href="editar_noticia.php?id=<?php echo $noticia['id_noticia']; ?>">
