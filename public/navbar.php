@@ -1,5 +1,5 @@
 <header id="header">
-
+<link rel="stylesheet" href="src/css/navbar.css">
     <nav class="navbar">
 
         <div class="nav-top">
