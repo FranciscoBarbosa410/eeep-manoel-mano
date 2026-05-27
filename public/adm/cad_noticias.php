@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     include('navbar_adm.php');
 ?>
 
@@ -16,7 +17,6 @@
             <h1 class="titulo">Cadastrar</h1>
             <p class="sub">Notícia</p>
             <?php 
-                session_start();
                 if(isset($_SESSION['mensagem'])) {
                     echo "<p>" . $_SESSION['mensagem'] . "</p>";
                     unset($_SESSION['mensagem']); 
@@ -27,8 +27,14 @@
                     <label for="titulo">Título</label>
                     <input type="text" name="titulo" id="titulo" maxlength="100" required>
     
-                    <label for="data_noticia">Data da notícia:</label>
-                    <input type="date" name="data_noticia" id="data_noticia" required>
+                    <label for="data_noticia">Data da notícia (dd/mm/aaaa):</label>
+                    <input type="text" 
+                           name="data_noticia" 
+                           id="data_noticia" 
+                           placeholder="dd/mm/yyyy" 
+                           maxlength="10" 
+                           pattern="\d{2}/\d{2}/\d{4}" 
+                           required>
                     
                     <label for="descricao_noticia">Descrição:</label><br>
                     <textarea name="descricao_noticia" id="conteudo" rows="6" cols="50" required></textarea>

@@ -7,10 +7,8 @@
         <ul>
             <li><a href="cursos_adm.php">Cursos</a></li>
             <li><a href="noticias_adm.php">Notícias</a></li>
-            <!-- <li><a href="../profissionais.php">Profissionais</a></li> -->
-            <!-- <li><a href="../sobre.php">Sobre nós</a></li> -->
-            <li><a href="#">Profissionais</a></li>
-            <li><a href="#">Sobre nós</a></li>
+            <li><a href="profissionais_adm.php">Profissionais</a></li>
+             <li><a href="#">Sobre nós</a></li> 
             <li>
                 <a href="../../app/logout.php">Logout</a>
             </li>

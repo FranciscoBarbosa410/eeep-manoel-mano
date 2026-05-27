@@ -18,12 +18,11 @@ $noticias = buscar_noticias($conexao);
         <a href="cad_noticias.php" class="btn">Adicionar noticia</a>
     
         <?php 
-            session_start();
             if(isset($_SESSION['mensagem'])) {
                 echo "<p>" . $_SESSION['mensagem'] . "</p>";
                 unset($_SESSION['mensagem']); 
             }
-         ?>
+        ?>
 
         <div class="noticias">
             <?php foreach($noticias as $noticia) { ?>
@@ -55,7 +54,8 @@ $noticias = buscar_noticias($conexao);
                     </button>
         
                     <button class="btn-secondary">
-                        <a href="remover_tarefa.php?id=<?php echo $noticia['id_noticia']; ?>">
+                        <a href="remover_noticia.php?id=<?php echo $noticia['id_noticia']; ?>" 
+                           onclick="return confirm('Tem certeza que deseja remover esta notícia?');">
                             Remover
                         </a>
                     </button>

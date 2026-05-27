@@ -8,9 +8,19 @@
         exit();
     }
 
-    $titulo = $_POST['titulo'];
-    $data_noticia = $_POST['data_noticia'];
-    $descricao_noticia = $_POST['descricao_noticia'];
+    $titulo = mysqli_real_escape_string($conexao, $_POST['titulo']);
+    $descricao_noticia = mysqli_real_escape_string($conexao, $_POST['descricao_noticia']);
+    
+    $data_input = $_POST['data_noticia']; 
+    $partes_data = explode('/', $data_input);
+
+    if (count($partes_data) == 3) {
+        $data_noticia = $partes_data[2] . '-' . $partes_data[1] . '-' . $partes_data[0];
+        $data_noticia = mysqli_real_escape_string($conexao, $data_noticia);
+    } else {
+        $data_noticia = date('Y-m-d'); 
+    }
+
     $foto_noticia = addslashes(file_get_contents($_FILES['foto_noticia']['tmp_name']));
 
     $query = "INSERT INTO noticias (titulo, data_noticia, descricao_noticia, foto_noticia)
@@ -26,9 +36,8 @@
         header('Location: ../public/adm/cad_noticias.php');
         exit();
     } else {
-        $_SESSION['mensagem'] = "Erro ao cadastrar" . mysqli_error($conexao);
+        $_SESSION['mensagem'] = "Erro ao cadastrar: " . mysqli_error($conexao);
         header('Location: ../public/adm/cad_noticias.php');
         exit();
     }
-    
 ?>

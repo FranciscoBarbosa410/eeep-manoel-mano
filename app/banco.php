@@ -20,4 +20,22 @@
 
         return $noticias;
     }
+
+    //Profissionais
+    function buscar_profissionais($conexao) {
+    $sqlBuscar = "SELECT * FROM profissionais ORDER BY nome_profissional ASC";
+    $resultado = mysqli_query($conexao, $sqlBuscar);
+
+    if (!$resultado) {
+        die("Erro na consulta ao banco de dados: " . mysqli_error($conexao));
+    }
+
+    $profissionais = [];
+
+    while($profissional = mysqli_fetch_assoc($resultado)) {
+        $profissionais[] = $profissional;
+    }
+
+    return $profissionais;
+}
 ?>

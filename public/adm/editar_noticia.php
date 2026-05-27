@@ -1,6 +1,6 @@
 <?php 
 include('../../app/banco.php');
-include('../../app/verifica_login.php');
+include('../../app/verifica_login.php'); // Certifique-se que este arquivo já possui session_start();
 include('navbar_adm.php');
 
 if (!isset($_GET['id'])) {
@@ -23,10 +23,16 @@ if (mysqli_num_rows($resultado) == 0) {
 $noticia = mysqli_fetch_assoc($resultado);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $titulo = $_POST['titulo'];
-    $data_noticia = $_POST['data_noticia'];
-    $descricao_noticia = $_POST['descricao_noticia'];
-
+    $titulo = mysqli_real_escape_string($conexao, $_POST['titulo']);
+    $descricao_noticia = mysqli_real_escape_string($conexao, $_POST['descricao_noticia']);
+    
+    $data_input = $_POST['data_noticia']; 
+    $partes_data = explode('/', $data_input);
+    if (count($partes_data) == 3) {
+        $data_noticia = $partes_data[2] . '-' . $partes_data[1] . '-' . $partes_data[0];
+    } else {
+        $data_noticia = date('Y-m-d'); 
+    }
     if (!empty($_FILES['foto_noticia']['tmp_name'])) {
         $foto_noticia = addslashes(file_get_contents($_FILES['foto_noticia']['tmp_name']));
         $sql_update = "UPDATE noticias SET 
@@ -65,13 +71,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
     <main id="container">
-
         <div class="card">
             <div class="card-edit">
                 <h1 class="titulo">Editar</h1>
                 <p class="sub">Notícia</p>
                 <?php 
-                    session_start();
+                    // Removido o session_start() duplicado daqui
                     if(isset($_SESSION['mensagem'])) {
                         echo "<p>" . $_SESSION['mensagem'] . "</p>";
                         unset($_SESSION['mensagem']); 
@@ -81,13 +86,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <form method="POST" enctype="multipart/form-data">
                     <div class="text">
                         <label for="titulo">Título</label>
-                        <input type="text" name="titulo" id="titulo" maxlength="100" value="<?php echo $noticia['titulo']; ?>" required>
+                        <input type="text" name="titulo" id="titulo" maxlength="100" value="<?php echo htmlspecialchars($noticia['titulo']); ?>" required>
         
-                        <label for="data_noticia">Data da notícia:</label>
-                        <input type="date" name="data_noticia" id="data_noticia" value="<?php echo $noticia['data_noticia']; ?>" required>
+                        <label for="data_noticia">Data da notícia (dd/mm/aaaa):</label>
+                        <input type="text" name="data_noticia" id="data_noticia" placeholder="Formatado: dd/mm/aaaa" maxlength="10" pattern="\d{2}/\d{2}/\d{4}" value="<?php echo date('d/m/Y', strtotime($noticia['data_noticia'])); ?>" required>
                         
                         <label for="conteudo">Descrição:</label><br>
-                        <textarea name="descricao_noticia" id="conteudo" rows="6" cols="50"required><?php echo nl2br(htmlspecialchars($noticia['descricao_noticia'])); ?></textarea>
+                        <textarea name="descricao_noticia" id="conteudo" rows="6" cols="50" required><?php echo htmlspecialchars($noticia['descricao_noticia']); ?></textarea>
         
                         <label for="foto_noticia">Nova foto da notícia (opcional):</label><br>
                         <input type="file" name="foto_noticia" id="foto_noticia" accept="image/*"><br><br>

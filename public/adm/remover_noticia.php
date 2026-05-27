@@ -1,4 +1,5 @@
 <?php 
+    session_start(); // Adicionado para que o $_SESSION funcione corretamente
     include('../../app/banco.php');
 
     $id = intval($_GET['id']);
