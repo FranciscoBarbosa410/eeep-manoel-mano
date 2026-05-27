@@ -1,14 +1,24 @@
-<?php include('navbar_adm.php'); ?>
+<?php 
+session_start();
+include('navbar_adm.php'); 
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Classificados</title>
+    <link rel="stylesheet" href="../src/css/style.css">
 </head>
 <body>
     <h1>Cadastrar Classificado</h1>
-    <form action="../app/cad_classificados.php" method="post" enctype="multipart/form-data">
+    <?php 
+    if(isset($_SESSION['mensagem'])) {
+        echo "<p>" . $_SESSION['mensagem'] . "</p>";
+        unset($_SESSION['mensagem']); 
+    }
+    ?>
+    <form action="../../app/cad_classificados.php" method="post" enctype="multipart/form-data">
         <label for="nome_classificado">Nome Completo</label>
         <input type="text" name="nome_classificado" id="nome_classificado" maxlength="255" required>
 

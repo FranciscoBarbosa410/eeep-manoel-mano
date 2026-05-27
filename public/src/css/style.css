@@ -7,6 +7,7 @@
 @import url('navbar.css');
 @import url('noticias.css');
 @import url('profissionais.css');
+@import url('sobre.css');
 @import url('variables.css');
 
 * {
@@ -103,3 +104,4 @@ body {
         }
     }
 }
+
