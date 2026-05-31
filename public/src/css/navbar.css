@@ -11,9 +11,7 @@
         var(--color-primary-2),
         var(--color-primary-1)
     );
-    position: fixed;
-    top: 0;
-    left: 0;
+    position: relative;
     z-index: 1000;
 }
 

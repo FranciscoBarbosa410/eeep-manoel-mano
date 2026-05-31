@@ -35,7 +35,7 @@
                 <li><a href="#">Sobre nós</a></li>
 
                 <li>
-                    <a href="tela_login.php">Login</a>
+                    <a href="../../app/logout.php"> Sair</a>
                 </li>
             </ul>
         </aside>
