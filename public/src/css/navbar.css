@@ -9,10 +9,7 @@
     width: 100%;
     background: linear-gradient(
         var(--color-primary-2),
-        var(--color-primary-1)
-    );
-    position: relative;
-    z-index: 1000;
+        var(--color-primary-1));
 }
 
 .nav-top{
