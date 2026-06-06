@@ -4,7 +4,7 @@
 
     if (!isset($_GET['id'])) {
         $_SESSION['mensagem'] = "Profissional não informado!";
-        header('Location: profissionais.php');
+        header('Location: profissionais_adm.php');
         exit();
     }
 
@@ -18,7 +18,6 @@
         $_SESSION['mensagem'] = "Erro ao remover profissional: " . mysqli_error($conexao);
     }
 
-    // Redireciona de volta para a listagem
     header('Location: profissionais_adm.php');
     exit();
 ?>

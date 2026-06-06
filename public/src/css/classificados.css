@@ -1,0 +1,213 @@
+/* ==========================================================================
+   SEÇÃO E GRID DE CLASSIFICADOS (ÁREA DO ADMINISTRADOR)
+   ========================================================================== */
+#classificados {
+    background: var(--color-neutral-4);
+    padding: 60px 0;
+}
+
+#classificados .title {
+    color: var(--color-primary-2);
+    padding: 5px 15px;
+    border-left: solid 10px var(--color-primary-2);
+    margin-left: 10%;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.btn-container-adm {
+    margin-left: 10%;
+    margin-bottom: 25px;
+}
+
+.btn-adicionar-novo {
+    display: inline-block;
+    background: var(--color-primary-1);
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.btn-adicionar-novo:hover {
+    background: var(--color-primary-2);
+    transform: translateY(-2px);
+}
+
+/* Container Estrutural do Grid de 5 colunas */
+#container-classificados {
+    width: 100%;
+    padding: 0 10%;
+    box-sizing: border-box;
+}
+
+#container-classificados .classificados-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Força a exibição de 5 cards por linha */
+    gap: 20px;
+    width: 100%;
+}
+
+/* Card Reduzido e Formalizado */
+.card-classificado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--color-neutral-1);
+    border-radius: 12px;
+    padding: 20px 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+    min-height: 250px;
+}
+
+.card-classificado:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+.card-classificado:has(.acoes-classificado) {
+    min-height: 380px;
+}
+
+/* Imagem em formato circular harmônico e reduzido */
+.capa-classificado {
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--color-neutral-3);
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    flex-shrink: 0;
+}
+
+.capa-classificado img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Conteúdo em texto controlado para evitar poluição visual */
+.conteudo-classificado {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.conteudo-classificado h3 {
+    color: var(--color-neutral-5);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.info-aprovacao {
+    font-size: 0.88rem;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.info-aprovacao span {
+    font-weight: bold;
+    color: var(--color-primary-2);
+}
+
+/* Botões Administrativos Proporcionais ao Card Menor */
+.acoes-classificado {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: auto; /* Alinha os botões perfeitamente à base */
+}
+
+.btn-adm-edit, .btn-adm-remove {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+    box-sizing: border-box;
+}
+
+.btn-adm-edit {
+    background: var(--color-primary-1);
+    color: #fff;
+}
+
+.btn-adm-edit:hover {
+    background: var(--color-primary-2);
+}
+
+.btn-adm-remove {
+    background: var(--color-secondary-2);
+    color: #fff;
+}
+
+.btn-adm-remove:hover {
+    background: var(--color-secondary-3);
+}
+
+.sem-classificados {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: var(--color-neutral-5);
+    font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE INDEPENDENTE PARA OS CLASSIFICADOS
+   ========================================================================== */
+@media (max-width: 1400px) {
+    #container-classificados .classificados-grid {
+        grid-template-columns: repeat(4, 1fr); /* Cai para 4 em telas de notebooks comuns */
+    }
+}
+
+@media (max-width: 1100px) {
+    #container-classificados .classificados-grid {
+        grid-template-columns: repeat(3, 1fr); /* Cai para 3 em monitores menores ou tablets em paisagem */
+    }
+}
+
+@media (max-width: 768px) {
+    #classificados {
+        padding: 40px 0;
+    }
+    #classificados .title, .btn-container-adm {
+        margin-left: 5%;
+    }
+    #classificados .title {
+        font-size: 1.8rem;
+    }
+    #container-classificados {
+        padding: 0 5%;
+    }
+    #container-classificados .classificados-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas ideais para tablets verticais */
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    #classificados .title {
+        font-size: 1.5rem;
+    }
+    #container-classificados .classificados-grid {
+        grid-template-columns: 1fr; /* Coluna única perfeita para smartphones */
+    }
+}

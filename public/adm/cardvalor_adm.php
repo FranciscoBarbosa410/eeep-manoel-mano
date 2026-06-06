@@ -1,4 +1,3 @@
-      
 <section id="mvv">
 
     <h2 class="section-title">
@@ -8,7 +7,7 @@
     <div class="mvv-container">
 
         <div class="mvv-card">
-            <div class="icon">🎯</div>
+            <span class="card-number">1</span>
 
             <h3>Missão</h3>
 
@@ -19,7 +18,7 @@
         </div>
 
         <div class="mvv-card">
-            <div class="icon">👁️</div>
+            <span class="card-number">2</span>
 
             <h3>Visão</h3>
 
@@ -30,7 +29,7 @@
         </div>
 
         <div class="mvv-card">
-            <div class="icon">💚</div>
+            <span class="card-number">3</span>
 
             <h3>Valores</h3>
 
@@ -43,5 +42,3 @@
     </div>
                
 </section>
-
-   

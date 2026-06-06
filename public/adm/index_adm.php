@@ -1,12 +1,15 @@
-<?php include('../../app/verifica_login.php'); ?>
-<?php include('navbar_adm.php'); ?>
+<?php 
+include('../../app/banco.php');
+include('../../app/verifica_login.php'); 
+include('navbar_adm.php');
+?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página do Administrador</title>
+    <title>Página do Administrator</title>
     <link rel="stylesheet" href="../src/css/style.css">
 </head>
 <body>
@@ -35,7 +38,19 @@
         <section id="cursos">
             <h2 class="title">Conheça os cursos oferecidos:</h2>
             <?php 
-                include('../card_cursos.php');
+                include('card_cursos_adm.php');
+            ?>
+        </section>
+
+        <section id="classificados">
+            <h2 class="title">Alunos Classificados</h2>
+            
+            <div class="btn-container-adm">
+                <a href="cad_classificados.php" class="btn-adicionar-novo">+ Adicionar Classificado</a>
+            </div>
+
+            <?php 
+                include('card_classificados_adm.php');
             ?>
         </section>
 
@@ -48,7 +63,5 @@
             </p>
         </section>
     </main>
-
-    <?php //include('../footer.php'); ?>
 </body>
 </html>

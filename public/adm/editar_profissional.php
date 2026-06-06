@@ -11,7 +11,6 @@ if (!isset($_GET['id'])) {
 
 $id = intval($_GET['id']);
 
-// Busca os dados atuais do profissional
 $sql = "SELECT * FROM profissionais WHERE id_profissional = $id";
 $resultado = mysqli_query($conexao, $sql);
 
@@ -24,11 +23,9 @@ if (mysqli_num_rows($resultado) == 0) {
 $profissional = mysqli_fetch_assoc($resultado);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Escapa os caracteres para evitar erros de sintaxe no SQL (como aspas simples)
     $nome_profissional = mysqli_real_escape_string($conexao, $_POST['nome_profissional']);
     $descricao_profissional = mysqli_real_escape_string($conexao, $_POST['descricao_profissional']);
 
-    // Verifica se uma nova foto foi enviada
     if (!empty($_FILES['foto_profissional']['tmp_name'])) {
         $foto_profissional = addslashes(file_get_contents($_FILES['foto_profissional']['tmp_name']));
         $sql_update = "UPDATE profissionais SET 
@@ -37,7 +34,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             foto_profissional='$foto_profissional'
             WHERE id_profissional=$id";
     } else {
-        // Se não enviou foto, mantém a foto atual
         $sql_update = "UPDATE profissionais SET 
             nome_profissional='$nome_profissional',
             descricao_profissional='$descricao_profissional'
@@ -85,10 +81,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <input type="text" name="nome_profissional" id="nome_profissional" value="<?php echo htmlspecialchars($profissional['nome_profissional']); ?>" required>
         
                         <label for="descricao_profissional">Descrição:</label>
-                        <input type="text" name="descricao_profissional" id="descricao_profissional" value="<?php echo htmlspecialchars($profissional['descricao_profissional']); ?>" required>
-        
-                        <label for="foto_profissional">Nova foto do profissional (Opcional - Somente .jpeg):</label><br>
-                        <input type="file" name="foto_profissional" id="foto_profissional" accept="image/*"><br><br>
+                        <textarea name="descricao_profissional" id="descricao_profissional" rows="6" cols="50" required><?php echo htmlspecialchars($profissional['descricao_profissional']); ?></textarea>
+
+                        <label for="foto_profissional">Nova foto do profissional (Opcional - Somente .jpeg):</label>
+                        <input type="file" name="foto_profissional" id="foto_profissional" accept="image/*">
         
                         <?php if (!empty($profissional['foto_profissional'])): ?>
                             <p>Foto atual:</p>

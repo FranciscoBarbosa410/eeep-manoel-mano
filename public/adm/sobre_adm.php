@@ -19,8 +19,8 @@ include('navbar_adm.php');
                 Nos conheça
             </h1>
            <p class="about-description">
-                Bem-vindo à <span>EEEP Manoel Mano</span>, um espaço onde o conhecimento acadêmico se conecta diretamente com a prática real. Nossa missão é oferecer as ferramentas necessárias para você construir uma <span>carreira de sucesso</span> desde o primeiro dia. 
-                Através dos nossos cursos técnicos, você desenvolve competências exigidas pelo <span>mercado profissional corporativo e tecnológico</span>, participando de estágios e projetos práticos. Ao mesmo tempo, nossa equipe prepara você de forma intensiva para os <span>desafios universitários</span>, abrindo as portas das melhores faculdades do país.
+                Bem-vindo à <span>EEEP Manoel Mano</span>, um espaço onde o conhecimento acadêmico se conecta diretamente com a prática real. Nossa missão é oferecer as ferramentas necessárias para você construir uma carreira de sucesso desde o primeiro dia. 
+                Através dos nossos cursos técnicos, você desenvolve competências exigidas pelo <span>mercado profissional</span>, participando de estágios e projetos práticos. Ao mesmo tempo, nossa equipe prepara você de forma intensiva para os <span>desafios universitários</span>, abrindo as portas das melhores faculdades do país.
             </p>
         </section>
 

@@ -7,7 +7,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,12 +16,11 @@
 </head>
 <body>
     <main id="container-profissional">
-        <h1 class="title">Profissionais da nossa escola</h1>
+        <h1 class="title">Grupo gestor da nossa escola</h1>
 
         <?php 
-            session_start();
             if(isset($_SESSION['mensagem'])) {
-                echo "<p>" . $_SESSION['mensagem'] . "</p>";
+                echo "<p class='alert-mensagem' style='text-align:center; color: var(--color-primary-1); font-weight:bold;'>" . $_SESSION['mensagem'] . "</p>";
                 unset($_SESSION['mensagem']); 
             }
         ?>
@@ -30,21 +29,26 @@
             <?php if (!empty($profissionais)) { ?>
                 <?php foreach($profissionais as $profissional) { ?>
                     <div class="card-profissional">
-                        <h2><?php echo htmlspecialchars($profissional['nome_profissional']); ?></h2>
                         
                         <?php if(!empty($profissional['foto_profissional'])) { ?>
-                            <img src="data:image/jpeg;base64,<?php echo base64_encode($profissional['foto_profissional']); ?>" 
-                            alt="Foto de <?php echo htmlspecialchars($profissional['nome_profissional']); ?>" style="width:200px; height:auto; border-radius: 50%;">
+                            <div class="avatar-profissional">
+                                <img src="data:image/jpeg;base64,<?php echo base64_encode($profissional['foto_profissional']); ?>" 
+                                alt="Foto de <?php echo htmlspecialchars($profissional['nome_profissional']); ?>">
+                            </div>
                         <?php } else { ?>
-                            <p><em>Sem foto</em></p>
+                            <div class="avatar-profissional sem-foto">
+                                <span>Preenchimento</span>
+                            </div>
                         <?php } ?>
+
+                        <h2><?php echo htmlspecialchars($profissional['nome_profissional']); ?></h2>
             
-                        <p><?php echo nl2br(htmlspecialchars($profissional['descricao_profissional'])); ?></p>
+                        <p class="descricao-texto"><?php echo nl2br(htmlspecialchars($profissional['descricao_profissional'])); ?></p>
             
                     </div>
                 <?php } ?>
             <?php } else { ?>
-                <p>Nenhum profissional cadastrado no momento.</p>
+                <p class="no-results">Nenhum profissional cadastrado no momento.</p>
             <?php } ?>
         </div>
 

@@ -35,7 +35,7 @@
         </div>
 
         <div class="historia-image">
-            <img src="src/images/eeep_fachada.png" alt="Imagem da escola">
+            <img src="src/images/eeepmm.jpg" alt="Imagem da escola">
         </div>
 
     </div>

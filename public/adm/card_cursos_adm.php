@@ -6,7 +6,7 @@
     <div class="cursos-grid">
         <?php if (!empty($cursos)): ?>
             <?php foreach($cursos as $curso): ?>
-                <a href="curso.php?id=<?php echo $curso['id_curso']; ?>" class="card-curso">
+                <a href="curso_adm.php?id=<?php echo $curso['id_curso']; ?>" class="card-curso">
                     
                     <div class="capa-curso">
                         <img src="data:image/jpeg;base64,<?php echo base64_encode($curso['foto_curso']); ?>" 

@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastrar Notícias</title>
+    <title>Cadastrar Notícia</title>
     <link rel="stylesheet" href="../src/css/style.css">
 </head>
 <body>
@@ -25,7 +25,7 @@
             <form action="../../app/cad_noticias.php" method="post" enctype="multipart/form-data">
                 <div class="text">
                     <label for="titulo">Título</label>
-                    <input type="text" name="titulo" id="titulo" maxlength="100" required>
+                    <input type="text" name="titulo" id="titulo" maxlength="100" placeholder="Título da notícia" required>
     
                     <label for="data_noticia">Data da notícia (dd/mm/aaaa):</label>
                     <input type="text" 
@@ -37,7 +37,7 @@
                            required>
                     
                     <label for="descricao_noticia">Descrição:</label><br>
-                    <textarea name="descricao_noticia" id="conteudo" rows="6" cols="50" required></textarea>
+                    <textarea name="descricao_noticia" id="conteudo" rows="6" cols="50" placeholder="Descrição" required></textarea>
     
                     <label for="foto_noticia">Foto da notícia(Somente .jpeg):</label><br>
                     <input type="file" name="foto_noticia" id="foto_noticia" accept="image/*"><br><br>

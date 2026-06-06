@@ -15,7 +15,7 @@
         </div>
 
         <div class="photo-card">
-            <img src="src/images/auditorio.jpeg" alt="">
+            <img src="src/images/auditorio.jpg" alt="">
             <div class="photo-text">
                 <h3>Auditório</h3>
                 <p>Espaço para eventos e palestras.</p>
@@ -23,10 +23,10 @@
         </div>
 
         <div class="photo-card">
-            <img src="src/images/quadra.jpg" alt="">
+            <img src="src/images/patio.jpg" alt="">
             <div class="photo-text">
-                <h3>Quadra</h3>
-                <p>Área esportiva da escola.</p>
+                <h3>Pátio</h3>
+                <p>Área de convivência e circulação entre as pessoas.</p>
             </div>
         </div>
 

@@ -2,14 +2,159 @@
     min-height: 100dvh;
     background: var(--color-neutral-2);
     background-size: cover;
+    padding-top: 20px;     
+    padding-bottom: 40px;
+    display: flow-root; 
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        margin-top: 40px;
+        margin-bottom: 20px;
+
+        .page-link {
+            padding: 10px 16px;
+            background: var(--color-neutral-1);
+            color: var(--color-neutral-5);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            border: 1px solid var(--color-neutral-3);
+            transition: 0.3s;
+
+            &:hover {
+                background: var(--color-primary-1);
+                color: white;
+                border-color: var(--color-primary-1);
+            }
+
+            &.active {
+                background: var(--color-primary-1);
+                color: white;
+                border-color: var(--color-primary-1);
+                cursor: default;
+                pointer-events: none; /* Desativa o clique na página já ativa */
+            }
+        }
+    }
 
     .title {
         color: var(--color-neutral-5);
-        align-items: center;
+        text-align: center;
         font-size: 4.3rem;
-        margin-left: 40%;
+        margin-top: 0;     
+        margin-bottom: 10px;
     }
     
+    /* ==========================================================================
+       BARRA DE PESQUISA RESPONSIVA CORRIGIDA
+       ========================================================================== */
+    .search-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 25px;
+        padding: 0 20px;
+
+        .search-form {
+            display: flex;
+            gap: 10px;
+            width: 100%;
+            max-width: 600px;
+            align-items: center;
+
+            input[type="text"] {
+                flex-grow: 1;
+                width: 100%; /* Garante estabilidade no tamanho */
+                padding: 12px 15px;
+                border: 1px solid var(--color-neutral-3);
+                border-radius: 6px;
+                font-size: 1rem;
+                background: var(--color-neutral-1);
+                color: var(--color-neutral-5);
+                outline: none;
+                box-sizing: border-box;
+
+                &:focus {
+                    border-color: var(--color-primary-1);
+                }
+            }
+
+            .btn-search {
+                padding: 12px 20px;
+                background: var(--color-primary-1);
+                color: white;
+                border: none;
+                border-radius: 6px;
+                font-weight: bold;
+                cursor: pointer;
+                white-space: nowrap; /* Impede o texto "Buscar" de quebrar em duas linhas */
+                transition: 0.3s;
+
+                &:hover {
+                    background: var(--color-primary-2);
+                }
+            }
+
+            .btn-clear {
+                padding: 12px 15px;
+                background: var(--color-neutral-3);
+                color: var(--color-neutral-5);
+                text-decoration: none;
+                border-radius: 6px;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                white-space: nowrap; /* Impede o texto "Limpar" de quebrar */
+                transition: 0.3s;
+
+                &:hover {
+                    background: var(--color-neutral-4);
+                }
+            }
+        }
+    }
+
+    /* Ajuste específico para celulares pequenos (abaixo de 500px) */
+    @media (max-width: 500px) {
+        .search-container {
+            .search-form {
+                flex-wrap: wrap; /* Permite que os botões desçam se não houver espaço */
+                
+                input[type="text"] {
+                    flex-basis: 100%; /* Input ocupa a linha inteira sozinho */
+                }
+
+                .btn-search {
+                    flex-grow: 1; /* Botão buscar ocupa o espaço restante ou metade da linha */
+                    text-align: center;
+                }
+
+                .btn-clear {
+                    flex-grow: 1; /* Botão limpar divide o espaço de baixo igualmente */
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .no-results {
+        grid-column: 1 / -1;
+        text-align: center;
+        color: var(--color-secondary-3);
+        font-size: 1.2rem;
+        margin-top: 30px;
+    }
+
+    .contador-noticias {
+        text-align: center;
+        margin-bottom: 10px;
+        color: var(--color-neutral-5);
+        font-weight: bold;
+        font-size: 1.1rem;
+    }
+
     .noticias {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -19,17 +164,40 @@
         .card-noticia {
             display: flex;
             flex-direction: column;
-            align-items: center; /* centraliza tudo no eixo horizontal */
+            align-items: center; 
             background: var(--color-neutral-1);
             border-radius: 10px;
             overflow: hidden;
             padding: 15px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.08);
             transition: transform 0.3s;
-            min-height: 450px;
+            min-height: 400px;
             
             &:hover {
                 transform: translateY(-5px);
+            }
+            
+            h2 {
+                margin: 10px 0;
+                text-align: center;
+                font-size: 1.5rem;
+
+                a {
+                    color: var(--color-neutral-5);
+                    text-decoration: none;
+                    display: block;
+                    transition: color 0.2s ease;
+
+                    &:hover {
+                        color: var(--color-primary-1);
+                    }
+                }
+            }
+
+            .data-card {
+                margin-bottom: 15px;
+                color: var(--color-neutral-5);
+                font-size: 0.85rem;
             }
             
             img {
@@ -37,6 +205,8 @@
                 height: 200px;
                 object-fit: cover;
                 background: #ccc;
+                margin-bottom: 15px;
+                border-radius: 6px;
             }
             
             p {
@@ -46,66 +216,153 @@
                 flex-grow: 1;
             }
         
-            .btn-primary {
+            .btn-primary, .btn-secondary {
                 align-self: center;
                 padding: 10px 15px;
-                background: var(--color-primary-1);
                 color: white;
                 border: none;
                 font-weight: bold;
                 border-radius: 6px;
                 cursor: pointer;
-                margin-top: 10px;
+                width: 80%;
+                text-align: center;
                 transition: 0.3s;
         
                 a {
                     color: var(--color-neutral-1);
                     text-decoration: none; 
+                    display: block;
                 }
-        
+
                 &:hover {
-                    background: var(--color-primary-2);
                     transform: scale(1.03);
                 }
             }
 
+            .btn-primary {
+                background: var(--color-primary-1);
+                margin-top: auto;
+                &:hover { background: var(--color-primary-2); }
+            }
+
             .btn-secondary {
-                align-self: center;
-                padding: 10px 15px;
                 background: var(--color-secondary-2);
-                color: white;
-                border: none;
-                font-weight: bold;
-                border-radius: 6px;
-                cursor: pointer;
                 margin-top: 10px;
-                transition: 0.3s;
-        
-                a {
-                    color: var(--color-neutral-1);
-                    text-decoration: none; 
-                }
-        
-                &:hover {
-                    background: var(--color-secondary-3);
-                    transform: scale(1.03);
-                }
+                &:hover { background: var(--color-secondary-3); }
             }
         }
     }
 }
 
 .btn {
-    top: 20px;      
-    left: 20px;
+    display: block;
+    width: fit-content;
     color: var(--color-primary-1);
     text-decoration: none;
     transition: 0.3s;
-    margin-left: 43%;        
+    margin: 20px auto; 
+    font-weight: bold;       
 
     &:hover {
         color: var(--color-primary-2);
         transform: scale(1.05);
+    }
+}
+
+@media (max-width: 992px) {
+    #container-noticia {
+        .title {
+            font-size: 3.5rem;
+        }
+        .noticias {
+            grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    #container-noticia {
+        .title {
+            font-size: 2.5rem;
+            padding: 0 10px;
+        }
+        .noticias {
+            grid-template-columns: 1fr;
+            padding: 10px;
+        }
+    }
+}
+
+#container-noticia-unica {
+    min-height: 100dvh;
+    background: var(--color-neutral-2);
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+
+    .noticia-completa {
+        background: var(--color-neutral-1);
+        max-width: 900px;
+        width: 100%;
+        border-radius: 12px;
+        overflow: hidden;
+        padding: 30px;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+        display: flex;
+        flex-direction: column;
+
+        .capa-noticia {
+            width: 100%;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            overflow: hidden;
+            
+            img {
+                width: 100%;
+                max-height: 450px;
+                object-fit: cover;
+                display: block;
+            }
+        }
+
+        .titulo-noticia {
+            color: var(--color-neutral-5);
+            font-size: 2.8rem;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .data-noticia {
+            color: var(--color-neutral-5);
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+            border-bottom: 1px solid var(--color-neutral-3);
+            padding-bottom: 12px;
+        }
+
+        .conteudo-noticia {
+            color: var(--color-neutral-5);
+            font-size: 1.15rem;
+            line-height: 1.7;
+            margin-bottom: 40px;
+            text-align: justify;
+        }
+
+        .btn-voltar {
+            align-self: center;
+            padding: 12px 30px;
+            background: var(--color-primary-1);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+            transition: 0.3s;
+            
+            &:hover {
+                background: var(--color-primary-2);
+                transform: scale(1.03);
+            }
+        }
     }
 }
 
@@ -115,9 +372,9 @@
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-   
-    max-width: 800px;
-    margin: 30px auto;
+    max-width: 900px; /* Um pouco mais largo para se adaptar melhor a notebooks */
+    width: 80%; /* Alinhado centralizado com as margens das seções */
+    margin: 0 auto;
     
     .slides {
         display: flex;
@@ -127,34 +384,40 @@
         .slide {
             min-width: 100%;
             background: var(--color-neutral-1);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s;
-        
+            display: flex;
+            flex-direction: column;
             
-            &:hover {
-                transform: scale(1.02);
-            }
-            
-            img {
+            img, .sem-foto-slide {
                 width: 100%;
-                height: 300px;
+                height: 380px; /* Altura ideal e elegante para telas de PC e Notebooks */
                 object-fit: cover;
                 background: var(--color-neutral-4);
                 display: block;
             }
 
             .text-slide {
-                padding: 15px;
+                padding: 20px 25px;
                 
                 h2 {
-                    font-size: 1.4rem;
+                    font-size: 1.5rem;
                     margin-bottom: 8px;
                     color: var(--color-primary-2);
+                    
+                    a {
+                        text-decoration: none;
+                        color: inherit;
+                        transition: color 0.2s;
+                        &:hover {
+                            color: var(--color-primary-1);
+                            text-decoration: underline;
+                        }
+                    }
                 }
             
                 p {
                     font-size: 1rem;
+                    color: var(--color-neutral-5);
+                    line-height: 1.5;
                 }
             }
         }
@@ -167,21 +430,111 @@
         background: var(--color-secondary-1);
         color: #fff;
         border: none;
-        padding: 12px;
+        padding: 12px 15px;
         cursor: pointer;
         border-radius: 50%;
         z-index: 10;
+        font-weight: bold;
+        transition: 0.3s;
+
+        &:hover {
+            background: var(--color-primary-1);
+        }
     }
     
-    .bnt-pass {
-        right: 10px;
+    .bnt-pass { right: 15px; }
+    .bnt-previos { left: 15px; }
+}
+
+/* Responsividade específica do Slider (Ajustando as alturas das imagens) */
+@media (max-width: 992px) {
+    .slider {
+        width: 90%;
+        .slides .slide img, .slides .slide .sem-foto-slide { height: 300px; }
+    }
+}
+
+@media (max-width: 768px) {
+    .slider {
+        .slides .slide img, .slides .slide .sem-foto-slide { height: 240px; }
+        .slides .slide .text-slide h2 { font-size: 1.3rem; }
+    }
+}
+
+@media (max-width: 480px) {
+    .slider {
+        width: 95%;
+        .slides .slide img, .slides .slide .sem-foto-slide { height: 180px; }
+        .bnt-pass, .bnt-previos { display: none; } /* Esconde setas no celular */
+    }
+}
+
+/* ==========================================================================
+   MEDIA QUERIES - RESPONSIVIDADE CORRIGIDA (NOTÍCIAS)
+   ========================================================================== */
+@media (max-width: 992px) {
+    #container-noticia {
+        .title {
+            font-size: 3.2rem;
+        }
+        .noticias {
+            grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
+            gap: 15px;
+            padding: 15px;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    #container-noticia {
+        .title {
+            font-size: 2.3rem;
+            padding: 0 10px;
+        }
+        .noticias {
+            grid-template-columns: 1fr; /* 1 coluna no mobile */
+            padding: 10px;
+            
+            .card-noticia {
+                min-height: auto; /* Permite que o card se adapte ao conteúdo */
+                padding: 12px;
+                
+                h2 {
+                    font-size: 1.3rem;
+                }
+                
+                img {
+                    height: 180px; /* Reduz altura da imagem no celular */
+                }
+            }
+        }
+    }
+}
+
+/* Nova regra para celulares muito pequenos (telas abaixo de 400px) */
+@media (max-width: 400px) {
+    #container-noticia {
+        .title {
+            font-size: 1.8rem;
+        }
+        .contador-noticias {
+            font-size: 0.95rem;
+            padding: 0 10px;
+        }
     }
     
-    .bnt-previos {
-        left: 10px;
-    }
-    
-    .bnt-pass:hover, .bnt-previos:hover {
-        background: var(--color-secondary-1);
+    #container-noticia-unica {
+        padding: 20px 10px; /* Reduz margens externas drasticamente */
+        
+        .noticia-completa {
+            padding: 15px;
+            
+            .titulo-noticia {
+                font-size: 1.8rem;
+            }
+            .conteudo-noticia {
+                font-size: 1rem;
+            }
+        }
     }
 }

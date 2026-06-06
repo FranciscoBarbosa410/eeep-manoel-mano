@@ -1,5 +1,8 @@
-<?php include('navbar.php'); ?>
-
+<?php 
+session_start();
+include('../app/banco.php');
+include('navbar.php'); 
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -37,6 +40,13 @@
             ?>
         </section>
 
+        <section id="classificados">
+            <h2 class="title">Alunos Classificados</h2>
+            <?php 
+                include('card_classificados.php');
+            ?>
+        </section>
+
         <section id="sobre">
             <h1 class="title">
                 Sobre Nós:
@@ -46,7 +56,5 @@
             </p>
         </section>
     </main>
-
-    <?php //include('footer.php'); ?>
 </body>
 </html>

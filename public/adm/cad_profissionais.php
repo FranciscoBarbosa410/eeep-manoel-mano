@@ -26,10 +26,10 @@
             <form action="../../app/cad_profissionais.php" method="post" enctype="multipart/form-data">
                 <div class="text">
                     <label for="nome_profissional">Nome:</label>
-                    <input type="text" name="nome_profissional" id="nome_profissional" required>
+                    <input type="text" name="nome_profissional" id="nome_profissional" placeholder="Nome" required>
 
                     <label for="descricao_profissional">Descrição:</label>
-                    <input type="text" name="descricao_profissional" id="descricao_profissional" required>
+                    <textarea name="descricao_profissional" id="descricao_profissional" rows="6" cols="50" placeholder="Descrição" required></textarea>
 
                     <label for="foto_profissional">Foto do profissional(Opcional - Somente .jpeg):</label><br>
                     <input type="file" name="foto_profissional" id="foto_profissional" accept="image/*"><br><br>                    

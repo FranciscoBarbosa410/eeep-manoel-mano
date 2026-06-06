@@ -91,11 +91,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <label for="data_noticia">Data da notícia (dd/mm/aaaa):</label>
                         <input type="text" name="data_noticia" id="data_noticia" placeholder="Formatado: dd/mm/aaaa" maxlength="10" pattern="\d{2}/\d{2}/\d{4}" value="<?php echo date('d/m/Y', strtotime($noticia['data_noticia'])); ?>" required>
                         
-                        <label for="conteudo">Descrição:</label><br>
+                        <label for="conteudo">Descrição:</label>
                         <textarea name="descricao_noticia" id="conteudo" rows="6" cols="50" required><?php echo htmlspecialchars($noticia['descricao_noticia']); ?></textarea>
         
-                        <label for="foto_noticia">Nova foto da notícia (opcional):</label><br>
-                        <input type="file" name="foto_noticia" id="foto_noticia" accept="image/*"><br><br>
+                        <label for="foto_noticia">Nova foto da notícia (opcional):</label>
+                        <input type="file" name="foto_noticia" id="foto_noticia" accept="image/*">
         
                         <?php if (!empty($noticia['foto_noticia'])): ?>
                             <p>Foto atual:</p>

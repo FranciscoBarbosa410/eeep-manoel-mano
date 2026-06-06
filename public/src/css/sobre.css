@@ -163,24 +163,39 @@
 }
 
 
+/* ... código anterior do seu CSS (galeria, etc) ... */
+
 .mvv-card:hover{
     transform: translateY(-10px);
     box-shadow: 0 12px 30px rgba(0,0,0,0.18);
 }
 
-.icon{
-    font-size: 3rem;
-    margin-bottom: 20px;
+/* NOVA CLASSE: Substitui a antiga .icon */
+.card-number {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--color-primary-2);
+    opacity: 0.25; /* Deixa o número sutil e elegante por padrão */
+    margin-bottom: 15px;
+    line-height: 1;
+    font-family: sans-serif; /* Garante uma tipografia limpa para o número */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Efeito ao passar o mouse no card: o número ganha destaque */
+.mvv-card:hover .card-number {
+    opacity: 1;
+    transform: scale(1.05);
 }
 
 .mvv-card h3{
     color: var(--color-primary-2);
     font-size: 1.8rem;
     font-weight: 700;
-
     margin-bottom: 15px;
 }
 
+/* ... restante do seu CSS e Media Queries ... */
 .mvv-card p{
     color: #555;
     font-size: 1rem;
@@ -205,6 +220,11 @@
 
     .mvv-card h3{
         font-size: 1.5rem;
+    }
+
+    .card-number {
+        font-size: 2.8rem; 
+        margin-bottom: 10px;
     }
 
     .mvv-card p{

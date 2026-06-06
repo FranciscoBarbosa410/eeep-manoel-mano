@@ -1,4 +1,3 @@
-// ELEMENTOS
 const slidesContainer = document.querySelector('.slides');
 const slides = document.querySelectorAll('.slide');
 const btnNext = document.querySelector('.bnt-pass');
