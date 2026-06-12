@@ -18,7 +18,7 @@
 <body>
     <main id="container-admin">
         <h1 class="title">Administradores do Sistema</h1>
-        <a href="cad_admins.php" class="btn">Adicionar administrador</a>
+        <a href="cad_admins.php" class="btn">+ Adicionar administrador</a>
 
         <?php
             if(isset($_SESSION['mensagem'])) {

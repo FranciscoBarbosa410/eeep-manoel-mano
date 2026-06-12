@@ -1,5 +1,4 @@
 <?php 
-    // Certifique-se de ter a função buscar_classificados() configurada em seu banco.php
     $classificados = buscar_classificados($conexao);
 ?>
 

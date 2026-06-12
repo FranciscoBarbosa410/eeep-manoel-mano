@@ -47,7 +47,7 @@ $noticias = buscar_noticias($conexao, $termo_pesquisa, $noticias_por_pagina, $of
             <?php endif; ?>
         </div>
 
-        <a href="cad_noticias.php" class="btn">Adicionar noticia</a>
+        <a href="cad_noticias.php" class="btn">+ Adicionar noticia</a>
     
         <?php 
             if(isset($_SESSION['mensagem'])) {

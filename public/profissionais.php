@@ -16,7 +16,7 @@
 </head>
 <body>
     <main id="container-profissional">
-        <h1 class="title">Grupo gestor da nossa escola</h1>
+        <h1 class="title">Profissionais da nossa escola</h1>
 
         <?php 
             if(isset($_SESSION['mensagem'])) {

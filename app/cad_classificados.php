@@ -8,12 +8,10 @@
         exit();
     }
 
-    // Escapa as strings para evitar quebras por aspas ou caracteres especiais
     $nome_classificado = mysqli_real_escape_string($conexao, $_POST['nome_classificado']);
     $curso_aprovado = mysqli_real_escape_string($conexao, $_POST['curso_aprovado']);
     $instituicao_aprovada = mysqli_real_escape_string($conexao, $_POST['instituicao_aprovada']);
 
-    // Lógica da imagem: Se enviado salva, senão utiliza a foto default
     if(!empty($_FILES['foto_classificado']['tmp_name'])) {
         $foto_classificado = addslashes(file_get_contents($_FILES['foto_classificado']['tmp_name']));
     } else {

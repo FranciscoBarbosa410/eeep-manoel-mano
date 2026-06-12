@@ -16,8 +16,8 @@
 </head>
 <body>
     <main id="container-profissional">
-        <h1 class="title">Grupo gestor da nossa escola</h1>
-        <a href="cad_profissionais.php" class="btn">Adicionar profissional</a>
+        <h1 class="title">Profissionais da nossa escola</h1>
+        <a href="cad_profissionais.php" class="btn">+ Adicionar profissional</a>
 
         <?php
             if(isset($_SESSION['mensagem'])) {
