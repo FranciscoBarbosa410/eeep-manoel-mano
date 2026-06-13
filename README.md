@@ -64,7 +64,7 @@ Este é o portal institucional e sistema de gerenciamento interno desenvolvido p
 - Copie a pasta do projeto para o diretório público do seu servidor (ex.: ```C:/xampp/htdocs/eeep-manoel-mano/public```).
 
 - Inicie o **Apache** e o **MySQL** via **XAMPP/WAMP**.
-Crie o banco de dados ```eeep_manoel_mano``` e importe o arquivo de esquema pelo **phpMyAdmin** ou via linha de comando **MySQL**.
+Crie o banco de dados ```eeepmm``` e importe o arquivo de esquema pelo **phpMyAdmin** ou via linha de comando **MySQL**.
 
 - Configure as credenciais do banco nos arquivos correspondentes dentro da pasta ```app/```.
 
