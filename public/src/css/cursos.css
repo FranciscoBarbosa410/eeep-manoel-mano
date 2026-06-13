@@ -3,14 +3,15 @@
    ========================================================================== */
 #container-cursos {
     width: 100%;
-    padding: 20px 10%;
+    padding: 20px 8%; /* Sincronizado com profissionais.css */
     box-sizing: border-box;
 
     .cursos-grid {
         display: grid;
-        grid-template-columns: repeat(4, 1fr); /* 4 colunas em monitores/notebooks */
+        grid-template-columns: repeat(4, 1fr); 
         gap: 25px;
         width: 100%;
+        box-sizing: border-box;
         
         .card-curso {
             display: flex;
@@ -21,16 +22,18 @@
             text-decoration: none;
             box-shadow: 0 4px 12px rgba(0,0,0,0.06);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-sizing: border-box;
             
             .card-curso-item {
                 display: flex;
                 flex-direction: column;
-                /* ... outros estilos que já existem ... */
-                min-height: 520px; /* Aumentado para comportar os novos botões sem quebrar o layout */
+                min-height: 440px; /* Reduzido de 520px para evitar estiramento artificial em resoluções médias */
+                box-sizing: border-box;
+                width: 100%;
             }
 
             .btn-acessar-curso {
-                margin-top: auto; /* Empurra a linha do "Conhecer Curso" e os botões de ação para a base do card */
+                margin-top: auto; 
             }
 
             &:hover {
@@ -69,6 +72,7 @@
                 flex-grow: 1;
                 justify-content: space-between;
                 align-items: center;
+                box-sizing: border-box;
 
                 h2 {
                     color: var(--color-neutral-5);
@@ -102,19 +106,24 @@
 #container-curso-lista {
     min-height: 100dvh;
     background: var(--color-neutral-4);
-    padding: 40px 10%;
+    padding: 30px 8%; /* Sincronizado */
     display: flow-root;
+    box-sizing: border-box;
 
     .title {
         color: var(--color-neutral-5);
-        font-size: 2.5rem;
+        text-align: center;
+        font-size: 2.5rem; /* Ajustado de 4.3rem */
+        font-weight: 700;
+        margin-top: 0;
         margin-bottom: 30px;
     }
 
     .cursos-grid-page {
         display: grid;
-        grid-template-columns: repeat(3, 1fr); /* 3 colunas em notebooks */
+        grid-template-columns: repeat(3, 1fr); 
         gap: 25px;
+        box-sizing: border-box;
 
         .card-curso-item {
             display: flex;
@@ -125,6 +134,7 @@
             padding: 20px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-sizing: border-box;
 
             &:hover {
                 transform: translateY(-5px);
@@ -201,9 +211,10 @@
 #container-curso-unico {
     min-height: 100dvh;
     background: var(--color-neutral-2);
-    padding: 50px 10%;
+    padding: 50px 8%;
     display: flex;
     justify-content: center;
+    box-sizing: border-box;
 
     .curso-completo {
         background: var(--color-neutral-1);
@@ -212,6 +223,7 @@
         padding: 40px;
         border-radius: 12px;
         box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        box-sizing: border-box;
 
         .capa-curso-detalhe {
             width: 100%;
@@ -266,79 +278,61 @@
 }
 
 /* ==========================================================================
-   4. MEDIA QUERIES (RESPONSIVIDADE COMPLETA E CORRIGIDA)
+   4. MEDIA QUERIES (SISTEMA ADAPTADO DO PROFISSIONAIS.CSS)
    ========================================================================== */
 @media (max-width: 1200px) {
     #container-cursos {
-        padding: 20px 5%;
         .cursos-grid {
             grid-template-columns: repeat(3, 1fr);
         }
-    }
-    #container-curso-lista {
-        padding: 40px 5%;
     }
 }
 
 @media (max-width: 992px) {
     #container-cursos {
-        padding: 20px 15px; /* Troca porcentagem por pixels estáveis */
+        padding: 20px 4%;
         .cursos-grid {
             grid-template-columns: repeat(2, 1fr);
             gap: 20px;
         }
     }
     #container-curso-lista {
-        padding: 30px 15px;
+        padding: 20px 4%;
+        .title { font-size: 2.2rem; }
         .cursos-grid-page {
             grid-template-columns: repeat(2, 1fr);
             gap: 20px;
         }
-    }
-    #container-curso-unico {
-        padding: 30px 15px;
-        .curso-completo { padding: 25px; }
     }
 }
 
 @media (max-width: 600px) {
     #container-cursos {
+        padding: 10px 15px;
+        .title { font-size: 1.8rem; }
         .cursos-grid {
-            grid-template-columns: 1fr; /* Força uma coluna perfeitamente */
-            gap: 15px;
+            grid-template-columns: 1fr;
+            gap: 20px;
             
             .card-curso .card-curso-item {
-                min-height: auto; /* Remove altura engessada no mobile */
-                padding-bottom: 15px;
+                min-height: auto; 
             }
         }
     }
     #container-curso-lista {
+        padding: 10px 15px;
+        .title { font-size: 1.8rem; }
         .cursos-grid-page {
             grid-template-columns: 1fr;
-            gap: 15px;
+            gap: 20px;
         }
     }
     #container-curso-unico {
+        padding: 10px 15px;
         .curso-completo {
-            padding: 15px;
+            padding: 20px;
             .titulo-curso { font-size: 1.6rem; }
-            .capa-curso-detalhe { height: 180px; }
-            .conteudo-curso-detalhe p { font-size: 0.95rem; }
+            .capa-curso-detalhe { height: 200px; }
         }
-    }
-}
-
-/* Nova regra de segurança para celulares com resoluções mínimas (até 360px) */
-@media (max-width: 380px) {
-    #container-curso-lista .title,
-    #container-curso-unico .curso-completo .titulo-curso {
-        font-size: 1.4rem;
-        text-align: center;
-    }
-    
-    .card-curso-item h2, 
-    .conteudo-curso h2 {
-        font-size: 1.1rem !important;
     }
 }

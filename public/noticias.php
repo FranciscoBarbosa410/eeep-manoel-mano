@@ -22,6 +22,7 @@ $noticias = buscar_noticias($conexao, $termo_pesquisa, $noticias_por_pagina, $of
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Notícias</title>
     <link rel="stylesheet" href="src/css/style.css">
 </head>

@@ -2,9 +2,19 @@
     min-height: 100dvh;
     background: var(--color-neutral-2);
     background-size: cover;
-    padding-top: 20px;     
-    padding-bottom: 40px;
+    padding-top: 30px;     
+    padding-bottom: 50px;
     display: flow-root; 
+    box-sizing: border-box;
+
+    .title {
+        color: var(--color-neutral-5);
+        text-align: center;
+        font-size: 2.5rem; /* Ajustado de 4.3rem para o padrão estável */
+        font-weight: 700;
+        margin-top: 0;     
+        margin-bottom: 20px;
+    }
 
     .pagination {
         display: flex;
@@ -35,27 +45,17 @@
                 color: white;
                 border-color: var(--color-primary-1);
                 cursor: default;
-                pointer-events: none; /* Desativa o clique na página já ativa */
+                pointer-events: none; 
             }
         }
     }
-
-    .title {
-        color: var(--color-neutral-5);
-        text-align: center;
-        font-size: 4.3rem;
-        margin-top: 0;     
-        margin-bottom: 10px;
-    }
     
-    /* ==========================================================================
-       BARRA DE PESQUISA RESPONSIVA CORRIGIDA
-       ========================================================================== */
     .search-container {
         display: flex;
         justify-content: center;
         margin-bottom: 25px;
         padding: 0 20px;
+        box-sizing: border-box;
 
         .search-form {
             display: flex;
@@ -63,10 +63,11 @@
             width: 100%;
             max-width: 600px;
             align-items: center;
+            box-sizing: border-box;
 
             input[type="text"] {
                 flex-grow: 1;
-                width: 100%; /* Garante estabilidade no tamanho */
+                width: 100%; 
                 padding: 12px 15px;
                 border: 1px solid var(--color-neutral-3);
                 border-radius: 6px;
@@ -89,7 +90,7 @@
                 border-radius: 6px;
                 font-weight: bold;
                 cursor: pointer;
-                white-space: nowrap; /* Impede o texto "Buscar" de quebrar em duas linhas */
+                white-space: nowrap; 
                 transition: 0.3s;
 
                 &:hover {
@@ -107,7 +108,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                white-space: nowrap; /* Impede o texto "Limpar" de quebrar */
+                white-space: nowrap; 
                 transition: 0.3s;
 
                 &:hover {
@@ -117,28 +118,6 @@
         }
     }
 
-    /* Ajuste específico para celulares pequenos (abaixo de 500px) */
-    @media (max-width: 500px) {
-        .search-container {
-            .search-form {
-                flex-wrap: wrap; /* Permite que os botões desçam se não houver espaço */
-                
-                input[type="text"] {
-                    flex-basis: 100%; /* Input ocupa a linha inteira sozinho */
-                }
-
-                .btn-search {
-                    flex-grow: 1; /* Botão buscar ocupa o espaço restante ou metade da linha */
-                    text-align: center;
-                }
-
-                .btn-clear {
-                    flex-grow: 1; /* Botão limpar divide o espaço de baixo igualmente */
-                    text-align: center;
-                }
-            }
-        }
-    }
     .no-results {
         grid-column: 1 / -1;
         text-align: center;
@@ -158,29 +137,32 @@
     .noticias {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-        padding: 20px;
+        gap: 30px;
+        padding: 20px 8%; /* Sincronizado com profissionais.css */
+        box-sizing: border-box;
         
         .card-noticia {
             display: flex;
             flex-direction: column;
             align-items: center; 
             background: var(--color-neutral-1);
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
-            padding: 15px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
-            transition: transform 0.3s;
-            min-height: 400px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-sizing: border-box;
+            min-height: 420px;
             
             &:hover {
                 transform: translateY(-5px);
+                box-shadow: 0 8px 25px rgba(0,0,0,0.12);
             }
             
             h2 {
                 margin: 10px 0;
                 text-align: center;
-                font-size: 1.5rem;
+                font-size: 1.4rem;
 
                 a {
                     color: var(--color-neutral-5);
@@ -202,7 +184,7 @@
             
             img {
                 width: 100%;
-                height: 200px;
+                height: 180px;
                 object-fit: cover;
                 background: #ccc;
                 margin-bottom: 15px;
@@ -210,10 +192,11 @@
             }
             
             p {
-                font-size: 0.9rem;
-                padding: 0 10px;
+                font-size: 1.02rem;
+                padding: 0 5px;
                 text-align: center;
                 flex-grow: 1;
+                color: #444;
             }
         
             .btn-primary, .btn-secondary {
@@ -224,9 +207,10 @@
                 font-weight: bold;
                 border-radius: 6px;
                 cursor: pointer;
-                width: 80%;
+                width: 100%;
                 text-align: center;
                 transition: 0.3s;
+                box-sizing: border-box;
         
                 a {
                     color: var(--color-neutral-1);
@@ -235,7 +219,7 @@
                 }
 
                 &:hover {
-                    transform: scale(1.03);
+                    transform: scale(1.02);
                 }
             }
 
@@ -257,48 +241,28 @@
 .btn {
     display: block;
     width: fit-content;
-    color: var(--color-primary-1);
+    color: white;
+    background: var(--color-primary-1);
+    padding: 10px 20px;
+    border-radius: 6px;
     text-decoration: none;
     transition: 0.3s;
     margin: 20px auto; 
     font-weight: bold;       
 
     &:hover {
-        color: var(--color-primary-2);
-        transform: scale(1.05);
-    }
-}
-
-@media (max-width: 992px) {
-    #container-noticia {
-        .title {
-            font-size: 3.5rem;
-        }
-        .noticias {
-            grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
-        }
-    }
-}
-
-@media (max-width: 600px) {
-    #container-noticia {
-        .title {
-            font-size: 2.5rem;
-            padding: 0 10px;
-        }
-        .noticias {
-            grid-template-columns: 1fr;
-            padding: 10px;
-        }
+        background: var(--color-primary-2);
+        transform: scale(1.03);
     }
 }
 
 #container-noticia-unica {
     min-height: 100dvh;
     background: var(--color-neutral-2);
-    padding: 40px 20px;
+    padding: 40px 8%;
     display: flex;
     justify-content: center;
+    box-sizing: border-box;
 
     .noticia-completa {
         background: var(--color-neutral-1);
@@ -310,6 +274,7 @@
         box-shadow: 0 6px 15px rgba(0,0,0,0.06);
         display: flex;
         flex-direction: column;
+        box-sizing: border-box;
 
         .capa-noticia {
             width: 100%;
@@ -327,7 +292,7 @@
 
         .titulo-noticia {
             color: var(--color-neutral-5);
-            font-size: 2.8rem;
+            font-size: 2.3rem;
             margin-bottom: 12px;
             line-height: 1.2;
         }
@@ -342,7 +307,7 @@
 
         .conteudo-noticia {
             color: var(--color-neutral-5);
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             line-height: 1.7;
             margin-bottom: 40px;
             text-align: justify;
@@ -360,7 +325,6 @@
             
             &:hover {
                 background: var(--color-primary-2);
-                transform: scale(1.03);
             }
         }
     }
@@ -372,9 +336,10 @@
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    max-width: 900px; /* Um pouco mais largo para se adaptar melhor a notebooks */
-    width: 80%; /* Alinhado centralizado com as margens das seções */
+    max-width: 900px; 
+    width: 84%; 
     margin: 0 auto;
+    box-sizing: border-box;
     
     .slides {
         display: flex;
@@ -386,10 +351,11 @@
             background: var(--color-neutral-1);
             display: flex;
             flex-direction: column;
+            box-sizing: border-box;
             
             img, .sem-foto-slide {
                 width: 100%;
-                height: 380px; /* Altura ideal e elegante para telas de PC e Notebooks */
+                height: 380px; 
                 object-fit: cover;
                 background: var(--color-neutral-4);
                 display: block;
@@ -397,9 +363,10 @@
 
             .text-slide {
                 padding: 20px 25px;
+                box-sizing: border-box;
                 
                 h2 {
-                    font-size: 1.5rem;
+                    font-size: 1.4rem;
                     margin-bottom: 8px;
                     color: var(--color-primary-2);
                     
@@ -415,7 +382,7 @@
                 }
             
                 p {
-                    font-size: 1rem;
+                    font-size: 0.95rem;
                     color: var(--color-neutral-5);
                     line-height: 1.5;
                 }
@@ -446,8 +413,18 @@
     .bnt-previos { left: 15px; }
 }
 
-/* Responsividade específica do Slider (Ajustando as alturas das imagens) */
+/* ==========================================================================
+   3. MEDIA QUERIES (SISTEMA ADAPTADO DO PROFISSIONAIS.CSS)
+   ========================================================================== */
 @media (max-width: 992px) {
+    #container-noticia {
+        .title { font-size: 2.2rem; }
+        .noticias {
+            grid-template-columns: repeat(2, 1fr); 
+            padding: 20px 4%;
+            gap: 20px;
+        }
+    }
     .slider {
         width: 90%;
         .slides .slide img, .slides .slide .sem-foto-slide { height: 300px; }
@@ -457,84 +434,46 @@
 @media (max-width: 768px) {
     .slider {
         .slides .slide img, .slides .slide .sem-foto-slide { height: 240px; }
-        .slides .slide .text-slide h2 { font-size: 1.3rem; }
-    }
-}
-
-@media (max-width: 480px) {
-    .slider {
-        width: 95%;
-        .slides .slide img, .slides .slide .sem-foto-slide { height: 180px; }
-        .bnt-pass, .bnt-previos { display: none; } /* Esconde setas no celular */
-    }
-}
-
-/* ==========================================================================
-   MEDIA QUERIES - RESPONSIVIDADE CORRIGIDA (NOTÍCIAS)
-   ========================================================================== */
-@media (max-width: 992px) {
-    #container-noticia {
-        .title {
-            font-size: 3.2rem;
-        }
-        .noticias {
-            grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
-            gap: 15px;
-            padding: 15px;
-        }
+        .slides .slide .text-slide h2 { font-size: 1.2rem; }
     }
 }
 
 @media (max-width: 600px) {
     #container-noticia {
         .title {
-            font-size: 2.3rem;
-            padding: 0 10px;
+            font-size: 1.8rem;
+            padding: 0 15px;
+        }
+        .search-container {
+            .search-form {
+                flex-wrap: wrap; 
+                input[type="text"] { flex-basis: 100%; }
+                .btn-search, .btn-clear { flex-grow: 1; text-align: center; }
+            }
         }
         .noticias {
-            grid-template-columns: 1fr; /* 1 coluna no mobile */
-            padding: 10px;
+            grid-template-columns: 1fr; 
+            padding: 10px 15px;
+            gap: 20px;
             
             .card-noticia {
-                min-height: auto; /* Permite que o card se adapte ao conteúdo */
-                padding: 12px;
-                
-                h2 {
-                    font-size: 1.3rem;
-                }
-                
-                img {
-                    height: 180px; /* Reduz altura da imagem no celular */
-                }
+                min-height: auto; 
+                padding: 20px;
+                h2 { font-size: 1.3rem; }
+                img { height: 180px; }
             }
         }
     }
-}
-
-/* Nova regra para celulares muito pequenos (telas abaixo de 400px) */
-@media (max-width: 400px) {
-    #container-noticia {
-        .title {
-            font-size: 1.8rem;
-        }
-        .contador-noticias {
-            font-size: 0.95rem;
-            padding: 0 10px;
-        }
-    }
-    
     #container-noticia-unica {
-        padding: 20px 10px; /* Reduz margens externas drasticamente */
-        
+        padding: 10px 15px;
         .noticia-completa {
-            padding: 15px;
-            
-            .titulo-noticia {
-                font-size: 1.8rem;
-            }
-            .conteudo-noticia {
-                font-size: 1rem;
-            }
+            padding: 20px;
+            .titulo-noticia { font-size: 1.6rem; }
         }
+    }
+    .slider {
+        width: 100%;
+        .slides .slide img, .slides .slide .sem-foto-slide { height: 180px; }
+        .bnt-pass, .bnt-previos { display: none; } 
     }
 }
